@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ibt0nj1sba0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01jkh"]
+size = Vector2(20, 72)
+
+[node name="WaveSegment" type="RigidBody2D"]
+rotation = -1.5707964
+mass = 0.2
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_01jkh")
+
+[node name="LeftJoint" type="PinJoint2D" parent="."]
+node_b = NodePath("..")
+
+[node name="RightJoint" type="PinJoint2D" parent="."]
+node_a = NodePath("..")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 30
+lifetime = 2.0
+speed_scale = 2.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(10, 36)
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+color = Color(0, 1, 1, 1)

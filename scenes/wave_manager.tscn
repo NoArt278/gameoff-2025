@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbobdx6wwq2it"]
+
+[ext_resource type="Script" uid="uid://d3cm3ud06ilnl" path="res://scripts/wave_manager.gd" id="1_8fe1o"]
+
+[sub_resource type="Gradient" id="Gradient_tt5ry"]
+offsets = PackedFloat32Array(0, 0.48473284, 1)
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1)
+
+[node name="WaveManager" type="Node"]
+script = ExtResource("1_8fe1o")
+block_color_gradient = SubResource("Gradient_tt5ry")

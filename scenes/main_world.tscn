@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvo2ju2rtabod"]
+
+[ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/ball.tscn" id="1_tt5ry"]
+[ext_resource type="Script" uid="uid://bil6mkiw5rw2b" path="res://scripts/hud.gd" id="3_bdp8l"]
+[ext_resource type="PackedScene" uid="uid://dbobdx6wwq2it" path="res://scenes/wave_manager.tscn" id="3_wjoj8"]
+[ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/settings.tscn" id="4_bdp8l"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_immoh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tt5ry"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wjoj8"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bdp8l"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_tt5ry"]
+
+[node name="Main World" type="Node2D"]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+position = Vector2(557, 643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_immoh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+position = Vector2(557, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_tt5ry")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+position = Vector2(1, 326)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_wjoj8")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+position = Vector2(1150, 326)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+shape = SubResource("WorldBoundaryShape2D_bdp8l")
+
+[node name="Ball" parent="." instance=ExtResource("1_tt5ry")]
+position = Vector2(243, 144)
+
+[node name="InputAudioStream" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamMicrophone_tt5ry")
+autoplay = true
+bus = &"Microphone"
+
+[node name="OutputAudioStream" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[node name="WaveSegments" type="Node" parent="."]
+
+[node name="WaveManager" parent="." instance=ExtResource("3_wjoj8")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(576, 326)
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_bdp8l")
+
+[node name="SettingsButton" type="Button" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_top = 37.0
+offset_right = -63.0
+offset_bottom = 68.0
+grow_horizontal = 0
+text = "Settings"
+
+[node name="Settings" parent="HUD" instance=ExtResource("4_bdp8l")]
+layout_mode = 1
+
+[connection signal="pressed" from="HUD/SettingsButton" to="HUD" method="_on_settings_button_pressed"]

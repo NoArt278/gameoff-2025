@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddeqqa15qm1ok"]
+
+[ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://dbobdx6wwq2it" path="res://scenes/wave_manager.tscn" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/ball.tscn" id="3_wu84c"]
+[ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/settings.tscn" id="4_wu84c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vue75"]
+font_size = 48
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_8ln24"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wu84c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8ln24"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rtw2f"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oa1go"]
+normal = Vector2(-1, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -96.0
+offset_right = 106.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test Title"
+label_settings = SubResource("LabelSettings_vue75")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = 31.0
+offset_right = 23.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="WaveManager" parent="." instance=ExtResource("2_bqqt6")]
+wave_block_count = 6
+
+[node name="UnaffectedByVisibility" type="Node" parent="."]
+
+[node name="Ball" parent="UnaffectedByVisibility" instance=ExtResource("3_wu84c")]
+position = Vector2(300, 210)
+
+[node name="InputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
+position = Vector2(553, 557)
+stream = SubResource("AudioStreamMicrophone_8ln24")
+autoplay = true
+bus = &"Microphone"
+
+[node name="OutputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
+autoplay = true
+
+[node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_wu84c")]
+
+[node name="Walls" type="Node" parent="UnaffectedByVisibility"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="UnaffectedByVisibility/Walls"]
+position = Vector2(557, 643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnaffectedByVisibility/Walls/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_wu84c")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="UnaffectedByVisibility/Walls"]
+position = Vector2(557, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnaffectedByVisibility/Walls/StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_8ln24")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="UnaffectedByVisibility/Walls"]
+position = Vector2(1, 326)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnaffectedByVisibility/Walls/StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_rtw2f")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="UnaffectedByVisibility/Walls"]
+position = Vector2(1150, 326)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnaffectedByVisibility/Walls/StaticBody2D4"]
+shape = SubResource("WorldBoundaryShape2D_oa1go")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

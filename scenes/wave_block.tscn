@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7rbxvsvbojsg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh4hd"]
+size = Vector2(20, 237)
+
+[node name="WaveBlock" type="AnimatableBody2D"]
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 108.5)
+amount = 50
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(10, 118.36)
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 108.5)
+shape = SubResource("RectangleShape2D_kh4hd")
