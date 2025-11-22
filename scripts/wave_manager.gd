@@ -48,7 +48,7 @@ func setup_level() -> void:
 	await get_tree().create_timer(0.1).timeout
 	is_setup_done = true
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not(is_setup_done) :
 		return
 	
@@ -66,5 +66,5 @@ func _physics_process(_delta: float) -> void:
 		if (curr_height > spawn_height) :
 			curr_height = spawn_height
 		
-		blocks[i].position.y = lerpf(blocks[i].position.y, curr_height, 0.1)
+		blocks[i].position.y = lerpf(blocks[i].position.y, curr_height, delta * smoothstep(min(curr_height, blocks[i].position.y), max(spawn_height, blocks[i].position.y), max(spawn_height, blocks[i].position.y)))
 		prev_freq = (i+1) * freq_range
