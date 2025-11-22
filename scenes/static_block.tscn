@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://eda0p453bo1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rugbh"]
+size = Vector2(20, 237)
+
+[node name="StaticBlock" type="StaticBody2D"]
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+amount = 50
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(10, 118.36)
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.0037181005, 0.17547303, 0.76638836, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rugbh")
