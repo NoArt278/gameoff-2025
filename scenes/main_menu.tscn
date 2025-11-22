@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddeqqa15qm1ok"]
+[gd_scene load_steps=12 format=3 uid="uid://ddeqqa15qm1ok"]
 
 [ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/player.tscn" id="3_wu84c"]
@@ -20,6 +20,9 @@ normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oa1go"]
 normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu84c"]
+size = Vector2(384, 744)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -124,6 +127,7 @@ shape = SubResource("WorldBoundaryShape2D_oa1go")
 
 [node name="WaveBlock" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("4_8ln24")]
 position = Vector2(192, 421)
+target_position = Vector2(192, 0)
 
 [node name="Particles" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="0"]
 position = Vector2(0, 362)
@@ -131,10 +135,12 @@ emission_rect_extents = Vector2(192, 372)
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="1"]
 position = Vector2(0, 362)
+shape = SubResource("RectangleShape2D_wu84c")
 
 [node name="WaveBlock2" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("4_8ln24")]
 position = Vector2(576, 421)
 block_frequency_range = 1
+target_position = Vector2(576, 0)
 
 [node name="Particles" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock2" index="0"]
 position = Vector2(0, 362)
@@ -142,10 +148,12 @@ emission_rect_extents = Vector2(192, 372)
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock2" index="1"]
 position = Vector2(0, 362)
+shape = SubResource("RectangleShape2D_wu84c")
 
 [node name="WaveBlock3" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("4_8ln24")]
 position = Vector2(960, 421)
 block_frequency_range = 2
+target_position = Vector2(960, 0)
 
 [node name="Particles" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock3" index="0"]
 position = Vector2(0, 362)
@@ -153,6 +161,21 @@ emission_rect_extents = Vector2(192, 372)
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock3" index="1"]
 position = Vector2(0, 362)
+shape = SubResource("RectangleShape2D_wu84c")
+
+[node name="WaveBlock4" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("4_8ln24")]
+position = Vector2(960, 57)
+rotation = 3.1415927
+block_frequency_range = 2
+target_position = Vector2(960, 324)
+
+[node name="Particles" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock4" index="0"]
+position = Vector2(0, 362)
+emission_rect_extents = Vector2(192, 372)
+
+[node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock4" index="1"]
+position = Vector2(0, 362)
+shape = SubResource("RectangleShape2D_wu84c")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
@@ -160,3 +183,4 @@ position = Vector2(0, 362)
 [editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock"]
 [editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock2"]
 [editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock3"]
+[editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock4"]

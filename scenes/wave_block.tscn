@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csqpu3xxcrr7b" path="res://scripts/AudioAffectedObjects/wave_block.gd" id="1_4pe3f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh4hd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pe3f"]
 size = Vector2(384, 744)
 
 [node name="WaveBlock" type="AnimatableBody2D"]
@@ -20,4 +20,4 @@ scale_amount_max = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 108.5)
-shape = SubResource("RectangleShape2D_kh4hd")
+shape = SubResource("RectangleShape2D_4pe3f")
