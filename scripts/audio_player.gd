@@ -9,7 +9,7 @@ func _ready() -> void:
 	play()
 	playback = get_stream_playback()
 
-func fill_buffer(frequency_range : float):
+func fill_buffer(frequency_range : float) -> void:
 	var global_freq_range = Globals.get_max_frequency() - Globals.get_min_frequency()
 	var frequency : float = Globals.get_min_frequency() + global_freq_range * frequency_range / AudioAffectedObject.AudioRange.size()
 	var increment = frequency / sample_hz

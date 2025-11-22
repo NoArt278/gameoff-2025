@@ -25,7 +25,7 @@ func get_min_frequency() -> float :
 func _exit_tree() -> void:
 	save_settings()
 
-func load_settings():
+func load_settings() -> void:
 	var conf := ConfigFile.new()
 
 	var error := conf.load(SAVE_PATH)
@@ -38,7 +38,7 @@ func load_settings():
 		print("Couldn't load save file: ", error_string(error))
 	
 
-func save_settings():
+func save_settings() -> void:
 	var conf := ConfigFile.new()
 
 	conf.set_value("settings", "volume", volume)
