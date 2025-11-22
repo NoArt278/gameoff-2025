@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddeqqa15qm1ok"]
+[gd_scene load_steps=14 format=3 uid="uid://ddeqqa15qm1ok"]
 
 [ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="3_8ln24"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/player.tscn" id="3_wu84c"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/wave_block.tscn" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/settings.tscn" id="4_wu84c"]
@@ -9,6 +10,8 @@
 font_size = 48
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_8ln24"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_wu84c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wu84c"]
 
@@ -93,7 +96,9 @@ autoplay = true
 bus = &"Microphone"
 
 [node name="OutputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
-autoplay = true
+stream = SubResource("AudioStreamGenerator_wu84c")
+bus = &"Microphone"
+script = ExtResource("3_8ln24")
 
 [node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_wu84c")]
 

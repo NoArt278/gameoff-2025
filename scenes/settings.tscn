@@ -144,7 +144,9 @@ offset_right = 109.5
 offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+min_value = 200.0
 max_value = 7902.13
+value = 200.0
 
 [node name="Label" type="Label" parent="MinFreqSlider"]
 layout_mode = 1
@@ -171,7 +173,9 @@ offset_right = 109.5
 offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
+min_value = 200.0
 max_value = 7902.13
+value = 200.0
 
 [node name="Label" type="Label" parent="MaxFreqSlider"]
 layout_mode = 1

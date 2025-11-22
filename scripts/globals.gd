@@ -7,7 +7,7 @@ const SAVE_PATH = "user://settings.cfg"
 
 var volume : float = 1
 var mic_sensitivity : float = 15.0
-var min_frequency : float = 0.0
+var min_frequency : float = 200.0
 var max_frequency : float = ABSOLUTE_MAX_FREQUENCY
 var wave_manager : WaveManager
 
