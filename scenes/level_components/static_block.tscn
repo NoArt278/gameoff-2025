@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://eda0p453bo1s"]
+[gd_scene load_steps=3 format=3 uid="uid://eda0p453bo1s"]
+
+[ext_resource type="Script" uid="uid://dk4gxskcrnxtd" path="res://scripts/particle_emitter_resizer.gd" id="1_7701a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rugbh"]
 size = Vector2(20, 237)
@@ -17,3 +19,4 @@ color = Color(0.0037181005, 0.17547303, 0.76638836, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rugbh")
+script = ExtResource("1_7701a")

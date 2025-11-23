@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://c25o74dpnjm61"]
+
+[ext_resource type="PackedScene" uid="uid://eda0p453bo1s" path="res://scenes/level_components/static_block.tscn" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="2_6iamk"]
+[ext_resource type="PackedScene" uid="uid://daap64ll2uons" path="res://scenes/level_components/goal.tscn" id="3_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/player.tscn" id="4_x42e6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
+size = Vector2(607, 158.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrm0"]
+size = Vector2(381, 337.25)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksju7"]
+normal = Vector2(1, 0)
+
+[node name="Level1" type="Node2D"]
+
+[node name="StaticBlocks" type="Node" parent="."]
+
+[node name="StaticBlock" parent="StaticBlocks" instance=ExtResource("1_ksju7")]
+position = Vector2(304, 569)
+
+[node name="Particles" parent="StaticBlocks/StaticBlock" index="0"]
+emission_rect_extents = Vector2(214, 79.25)
+
+[node name="CollisionShape2D" parent="StaticBlocks/StaticBlock" index="1"]
+shape = SubResource("RectangleShape2D_6iamk")
+
+[node name="StaticBlock2" parent="StaticBlocks" instance=ExtResource("1_ksju7")]
+position = Vector2(985, 569)
+
+[node name="Particles" parent="StaticBlocks/StaticBlock2" index="0"]
+emission_rect_extents = Vector2(214, 79.25)
+
+[node name="CollisionShape2D" parent="StaticBlocks/StaticBlock2" index="1"]
+position = Vector2(-23.5, -89.375)
+shape = SubResource("RectangleShape2D_nsrm0")
+
+[node name="Colliders" type="Node" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="Colliders"]
+position = Vector2(0, 287)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_ksju7")
+
+[node name="WaveBlocks" type="Node" parent="."]
+
+[node name="WaveBlock" parent="WaveBlocks" instance=ExtResource("2_6iamk")]
+position = Vector2(690, 466)
+target_position = Vector2(690, 319)
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock" index="1"]
+position = Vector2(0, 86)
+
+[node name="Goal" parent="." instance=ExtResource("3_nsrm0")]
+position = Vector2(950, 268)
+
+[node name="Player" parent="." instance=ExtResource("4_x42e6")]
+position = Vector2(73, 428)
+
+[editable path="StaticBlocks/StaticBlock"]
+[editable path="StaticBlocks/StaticBlock2"]
+[editable path="WaveBlocks/WaveBlock"]
