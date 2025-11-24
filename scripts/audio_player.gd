@@ -1,9 +1,9 @@
 extends AudioStreamPlayer2D
 
-var playback # Will hold the AudioStreamGeneratorPlayback.
-@onready var sample_hz = stream.mix_rate
-var pulse_hz # The frequency of the sound wave.
-var phase = 0.0
+var playback : AudioStreamPlayback
+@onready var sample_hz : float = stream.mix_rate
+var pulse_hz : float
+var phase : float = 0.0
 
 func _ready() -> void:
 	play()
@@ -14,7 +14,7 @@ func fill_buffer(frequency_range : float) -> void:
 	var frequency : float = Globals.get_min_frequency() + global_freq_range * frequency_range / AudioAffectedObject.AudioRange.size()
 	var increment = frequency / sample_hz
 	var frames_available = playback.get_frames_available()
-
+	
 	for i in range(frames_available):
 		playback.push_frame(Vector2.ONE * sin(phase * TAU))
 		phase = fmod(phase + increment, 1.0)

@@ -14,11 +14,14 @@ var prev_screen : Control = null
 var calibrate_with_mic : bool = false
 
 func open_settings(prev : Control) -> void:
+	get_tree().paused = true
 	visible = true
 	prev_screen = prev
+	PhysicsServer2D.set_active(true)
 
 
 func close_settings() -> void:
+	get_tree().paused = false
 	visible = false
 	if prev_screen != null :
 		prev_screen.visible = true
@@ -57,4 +60,5 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_main_menu_button_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

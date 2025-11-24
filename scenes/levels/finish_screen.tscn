@@ -1,0 +1,206 @@
+[gd_scene load_steps=6 format=3 uid="uid://isqut0xnwr3y"]
+
+[ext_resource type="Script" uid="uid://b85aeuhx60iy0" path="res://scripts/finish_screen.gd" id="1_xleaw"]
+[ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="2_groyn"]
+[ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="4_aj5v1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksju7"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tjvmu"]
+normal = Vector2(-1, 0)
+
+[node name="FinishScreen" type="Node2D"]
+script = ExtResource("1_xleaw")
+
+[node name="Colliders" type="Node" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="Colliders"]
+position = Vector2(0, 287)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_ksju7")
+
+[node name="RightWall" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1152, 290)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/RightWall"]
+shape = SubResource("WorldBoundaryShape2D_tjvmu")
+
+[node name="WaveBlocks" type="Node" parent="."]
+
+[node name="WaveBlock" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(83, 466)
+target_position = Vector2(83, 319)
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock2" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(248, 466)
+target_position = Vector2(248, 319)
+frequency_effect_range = 1
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock2" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock3" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(413, 466)
+target_position = Vector2(413, 319)
+frequency_effect_range = 2
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock3" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock4" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(578, 466)
+target_position = Vector2(578, 319)
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock4" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock5" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(742, 466)
+target_position = Vector2(742, 319)
+frequency_effect_range = 1
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock5" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock6" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(906, 466)
+target_position = Vector2(906, 319)
+frequency_effect_range = 2
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock6" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock7" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(1071, 466)
+target_position = Vector2(1071, 319)
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock7" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock8" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(84, 124)
+rotation = -3.1415927
+target_position = Vector2(83, 250)
+frequency_effect_range = 1
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock8" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock9" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(248, 124)
+rotation = -3.1415927
+target_position = Vector2(248, 250)
+frequency_effect_range = 2
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock9" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock10" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(413, 124)
+rotation = -3.1415927
+target_position = Vector2(413, 250)
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock10" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock11" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(578, 124)
+rotation = -3.1415927
+target_position = Vector2(578, 250)
+frequency_effect_range = 1
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock11" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock12" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(742, 124)
+rotation = -3.1415927
+target_position = Vector2(742, 250)
+frequency_effect_range = 2
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock12" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock13" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(906, 124)
+rotation = -3.1415927
+target_position = Vector2(906, 250)
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock13" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock14" parent="WaveBlocks" instance=ExtResource("2_groyn")]
+position = Vector2(1071, 124)
+rotation = -3.1415927
+target_position = Vector2(1071, 250)
+frequency_effect_range = 1
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock14" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="Player" parent="." instance=ExtResource("4_aj5v1")]
+position = Vector2(73, 428)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -17.0
+offset_right = 85.5
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "THANKS FOR PLAYING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return To Main" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 35.0
+offset_right = 80.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back To Main Menu"
+
+[connection signal="pressed" from="Control/Return To Main" to="." method="_on_return_to_main_pressed"]
+
+[editable path="WaveBlocks/WaveBlock"]
+[editable path="WaveBlocks/WaveBlock2"]
+[editable path="WaveBlocks/WaveBlock3"]
+[editable path="WaveBlocks/WaveBlock4"]
+[editable path="WaveBlocks/WaveBlock5"]
+[editable path="WaveBlocks/WaveBlock6"]
+[editable path="WaveBlocks/WaveBlock7"]
+[editable path="WaveBlocks/WaveBlock8"]
+[editable path="WaveBlocks/WaveBlock9"]
+[editable path="WaveBlocks/WaveBlock10"]
+[editable path="WaveBlocks/WaveBlock11"]
+[editable path="WaveBlocks/WaveBlock12"]
+[editable path="WaveBlocks/WaveBlock13"]
+[editable path="WaveBlocks/WaveBlock14"]

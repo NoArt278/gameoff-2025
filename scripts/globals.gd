@@ -17,6 +17,7 @@ var max_frequency : float = ABSOLUTE_MAX_FREQUENCY
 var wave_manager : WaveManager
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	load_data()
 	wave_manager = WAVE_MANAGER.instantiate()
 	add_child(wave_manager)
@@ -40,7 +41,7 @@ func load_data() -> void:
 		min_frequency = conf.get_value("settings", "min_frequency", ABSOLUTE_MIN_FREQUENCY)
 		max_frequency = conf.get_value("settings", "max_frequency", ABSOLUTE_MAX_FREQUENCY)
 		
-		last_finished_level = conf.get_value("level", "last_finished_level", 1)
+		#last_finished_level = conf.get_value("level", "last_finished_level", 1)
 	else:
 		print("Couldn't load save file: ", error_string(error))
 	

@@ -8,6 +8,7 @@ font_size = 48
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5p8wc"]
 
 [node name="Settings" type="Control"]
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 15

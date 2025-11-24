@@ -16,9 +16,10 @@ func load_level(level : int) -> void :
 	if level <= all_levels.size() :
 		current_level_number = level
 		current_level_scene = all_levels[level-1].instantiate()
-		add_child(current_level_scene)
+		call_deferred("add_child", current_level_scene)
 		current_goal = current_level_scene.find_child("Goal")
-		current_goal.level_cleared.connect(advance_level)
+		if current_goal :
+			current_goal.level_cleared.connect(advance_level)
 		
 		if level > Globals.last_finished_level :
 			Globals.last_finished_level = level
