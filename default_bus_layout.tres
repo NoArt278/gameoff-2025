@@ -7,7 +7,6 @@ resource_name = "Record"
 resource_name = "SpectrumAnalyzer"
 
 [resource]
-bus/0/send = &"Filtered"
 bus/1/name = &"Microphone Output"
 bus/1/solo = false
 bus/1/mute = false

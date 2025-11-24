@@ -4,3 +4,7 @@ extends Control
 
 func _on_settings_button_pressed() -> void:
 	settings.open_settings(null)
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		settings.open_settings(null)
