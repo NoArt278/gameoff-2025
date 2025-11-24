@@ -1,13 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvo2ju2rtabod"]
+[gd_scene load_steps=7 format=3 uid="uid://dvo2ju2rtabod"]
 
 [ext_resource type="Script" uid="uid://bil6mkiw5rw2b" path="res://scripts/hud.gd" id="3_bdp8l"]
 [ext_resource type="PackedScene" uid="uid://be0oalagyckgu" path="res://scenes/level_manager.tscn" id="3_wjoj8"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/settings.tscn" id="4_bdp8l"]
 [ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="4_jj0au"]
-[ext_resource type="PackedScene" uid="uid://c25o74dpnjm61" path="res://scenes/levels/level_1.tscn" id="5_wy0bs"]
-[ext_resource type="PackedScene" uid="uid://dtqdxuik6lu00" path="res://scenes/levels/level_2.tscn" id="6_5irk3"]
-[ext_resource type="PackedScene" uid="uid://isqut0xnwr3y" path="res://scenes/levels/finish_screen.tscn" id="6_emumq"]
-[ext_resource type="PackedScene" uid="uid://bjrjlclkclwgw" path="res://scenes/levels/level_3.tscn" id="7_5irk3"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_bdp8l"]
 
@@ -57,6 +53,5 @@ text = "Settings"
 layout_mode = 1
 
 [node name="LevelManager" parent="." instance=ExtResource("3_wjoj8")]
-all_levels = Array[Resource]([ExtResource("5_wy0bs"), ExtResource("6_5irk3"), ExtResource("7_5irk3"), ExtResource("6_emumq")])
 
 [connection signal="pressed" from="HUD/SettingsButton" to="HUD" method="_on_settings_button_pressed"]

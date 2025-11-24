@@ -1,13 +1,12 @@
 extends Node
 
 @export var all_levels : Array[Resource]
-var current_level_number : int
 var current_level_scene : Node2D
 var current_goal : Goal
 var current_player : Player
 
 func _ready() -> void:
-	load_level(Globals.last_finished_level)
+	load_level(Globals.current_level)
 
 func load_level(level : int) -> void :
 	if current_level_scene :
@@ -16,7 +15,7 @@ func load_level(level : int) -> void :
 		current_level_scene.queue_free()
 	
 	if level <= all_levels.size() :
-		current_level_number = level
+		Globals.current_level = level
 		current_level_scene = all_levels[level-1].instantiate()
 		call_deferred("add_child", current_level_scene)
 		current_goal = current_level_scene.find_child("Goal")
@@ -30,7 +29,7 @@ func load_level(level : int) -> void :
 			Globals.last_finished_level = level
 
 func advance_level() -> void :
-	load_level(current_level_number + 1)
+	load_level(Globals.current_level + 1)
 
 func retry_level() -> void:
-	load_level(current_level_number)
+	load_level(Globals.current_level)

@@ -8,6 +8,7 @@ const SAVE_PATH = "user://settings.cfg"
 
 # Level
 var last_finished_level : int = 1
+var current_level : int = 1
 
 # Settings
 var volume : float = 1
@@ -41,7 +42,7 @@ func load_data() -> void:
 		min_frequency = conf.get_value("settings", "min_frequency", ABSOLUTE_MIN_FREQUENCY)
 		max_frequency = conf.get_value("settings", "max_frequency", ABSOLUTE_MAX_FREQUENCY)
 		
-		#last_finished_level = conf.get_value("level", "last_finished_level", 1)
+		last_finished_level = conf.get_value("level", "last_finished_level", 1)
 	else:
 		print("Couldn't load save file: ", error_string(error))
 	

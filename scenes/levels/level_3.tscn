@@ -41,11 +41,6 @@ emission_rect_extents = Vector2(214, 79.25)
 position = Vector2(-386.25, 331)
 shape = SubResource("RectangleShape2D_l37oo")
 
-[node name="BulletShooter" parent="StaticBlocks" instance=ExtResource("4_0qepi")]
-position = Vector2(1136, 331)
-shoot_direction = Vector2(-1, 0)
-shoot_interval = 2.0
-
 [node name="Colliders" type="Node" parent="."]
 
 [node name="LeftWall" type="StaticBody2D" parent="Colliders"]
@@ -62,6 +57,13 @@ position = Vector2(4, 0)
 shape = SubResource("WorldBoundaryShape2D_fiq81")
 
 [node name="WaveBlocks" type="Node" parent="."]
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="BulletShooter" parent="Obstacles" instance=ExtResource("4_0qepi")]
+position = Vector2(1136, 331)
+shoot_direction = Vector2(-1, 0)
+shoot_interval = 2.0
 
 [node name="Goal" parent="." instance=ExtResource("3_qpwj6")]
 position = Vector2(958, 332)

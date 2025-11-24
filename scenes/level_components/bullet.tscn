@@ -8,6 +8,7 @@ size = Vector2(47, 16)
 
 [node name="Bullet" type="AnimatableBody2D"]
 script = ExtResource("1_b36hm")
+unaffected_by_audio_color = Color(0.5176471, 0, 0.7372549, 1)
 
 [node name="Particles" type="CPUParticles2D" parent="."]
 process_mode = 3

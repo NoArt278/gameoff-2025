@@ -21,7 +21,7 @@ gravity = Vector2(0, 0)
 initial_velocity_max = 5.0
 scale_amount_min = 2.0
 scale_amount_max = 2.0
-color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+color = Color(0.51736516, 0.0018450442, 0.73737115, 1)
 
 [node name="Particles2" type="CPUParticles2D" parent="."]
 process_mode = 3
@@ -35,7 +35,7 @@ gravity = Vector2(0, 0)
 initial_velocity_max = 5.0
 scale_amount_min = 2.0
 scale_amount_max = 2.0
-color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+color = Color(0.51736516, 0.0018450442, 0.73737115, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dqoj5")
