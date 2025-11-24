@@ -65,10 +65,10 @@ position = Vector2(0, 287)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/LeftWall"]
 shape = SubResource("WorldBoundaryShape2D_ksju7")
 
-[node name="LeftWall2" type="StaticBody2D" parent="Colliders"]
+[node name="RightWall" type="StaticBody2D" parent="Colliders"]
 position = Vector2(1155, 287)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/LeftWall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/RightWall"]
 position = Vector2(4, 0)
 shape = SubResource("WorldBoundaryShape2D_x42e6")
 

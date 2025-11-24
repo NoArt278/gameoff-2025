@@ -7,7 +7,7 @@ var spawn_position : Vector2
 
 func _ready() -> void:
 	spawn_position = position
-	particles.color = Globals.wave_manager.block_color_gradient.get_color(frequency_effect_range)
+	recolor_particles()
 
 func audio_effect(delta : float = 1) -> void:
 	var global_freq_range : float = (Globals.get_max_frequency() - Globals.get_min_frequency())

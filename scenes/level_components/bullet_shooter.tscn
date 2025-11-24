@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4fp37qyd3lof"]
+
+[ext_resource type="Script" uid="uid://dk4gxskcrnxtd" path="res://scripts/particle_emitter_resizer.gd" id="1_4wsqh"]
+[ext_resource type="Script" uid="uid://sj5mqrklwybr" path="res://scripts/bullet_shooter.gd" id="1_gelh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqoj5"]
+size = Vector2(33, 37)
+
+[node name="BulletShooter" type="StaticBody2D"]
+script = ExtResource("1_gelh8")
+bullet_speed = 100.0
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+process_mode = 3
+amount = 30
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(16.5, 18.5)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+
+[node name="Particles2" type="CPUParticles2D" parent="."]
+process_mode = 3
+position = Vector2(-30, 0)
+amount = 30
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(13.8, 8.48)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dqoj5")
+script = ExtResource("1_4wsqh")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+
+[node name="BulletSpawnPos" type="Node2D" parent="."]
+position = Vector2(-57, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

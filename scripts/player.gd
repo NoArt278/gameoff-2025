@@ -5,8 +5,15 @@ class_name Player
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@onready var destroy_particles: CPUParticles2D = $DestroyParticles
+@onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
+var can_move: bool = true
+
+signal died
 
 func _physics_process(delta: float) -> void:
+	if not(can_move) :
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -24,3 +31,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func die() -> void:
+	can_move = false
+	cpu_particles_2d.emitting = false
+	destroy_particles.restart()
+	await destroy_particles.finished
+	died.emit()
