@@ -29,6 +29,7 @@ bus = &"Microphone"
 script = ExtResource("4_jj0au")
 
 [node name="HUD" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0

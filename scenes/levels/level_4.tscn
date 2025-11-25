@@ -107,20 +107,20 @@ shape = SubResource("RectangleShape2D_anwe6")
 
 [node name="Obstacles" type="Node" parent="."]
 
-[node name="BulletShooter2" parent="Obstacles" instance=ExtResource("2_anwe6")]
+[node name="BulletShooter" parent="Obstacles" instance=ExtResource("2_anwe6")]
 position = Vector2(1136, 161)
 shoot_direction = Vector2(-1, 0)
 shoot_interval = 0.0
 is_affected_by_audio = false
 
-[node name="BulletShooter4" parent="Obstacles" instance=ExtResource("2_anwe6")]
+[node name="BulletShooter2" parent="Obstacles" instance=ExtResource("2_anwe6")]
 position = Vector2(1137, 359)
 shoot_direction = Vector2(-1, 0)
 shoot_interval = 2.0
 is_affected_by_audio = false
 shoot_delay = 2.0
 
-[node name="BulletShooter6" parent="Obstacles" instance=ExtResource("2_anwe6")]
+[node name="BulletShooter3" parent="Obstacles" instance=ExtResource("2_anwe6")]
 position = Vector2(1137, 573)
 shoot_direction = Vector2(-1, 0)
 shoot_interval = 2.0
