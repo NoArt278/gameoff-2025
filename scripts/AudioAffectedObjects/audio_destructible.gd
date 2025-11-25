@@ -34,8 +34,12 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func destroy() -> void:
 	is_destroyed = true
-	collision_shape_2d.disabled = true
+	collision_shape_2d.set_deferred("disabled", true)
 	particles.emitting = false
 	destroy_particles.restart()
 	await destroy_particles.finished
 	queue_free()
+
+func recolor_particles() -> void:
+	super()
+	destroy_particles.color = particles.color
