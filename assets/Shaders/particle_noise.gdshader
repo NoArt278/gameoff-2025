@@ -2,10 +2,10 @@ shader_type canvas_item;
 render_mode world_vertex_coords;
 
 uniform vec4 color : source_color = vec4(1.0);
+uniform int pixel_interval = 0;
 uniform float move_speed = 3.0;
-uniform int dot_pixel_interval = 3;
 uniform float radius = 0.3;
-uniform float amplitude = 1.0;
+uniform float amplitude = 5.0;
 
 varying vec2 vertex_pos;
 
@@ -19,6 +19,10 @@ void vertex() {
 
 void fragment() {
 	vec2 screen_size = vec2(1.0 / SCREEN_PIXEL_SIZE.x, 1.0 / SCREEN_PIXEL_SIZE.y);
+	int dot_pixel_interval = 8;
+	if (pixel_interval > 0) {
+		dot_pixel_interval = pixel_interval;
+	}
 	vec2 grid_pos = floor(vertex_pos / float(dot_pixel_interval));
 
 	vec2 all_grid_pos[9] = vec2[9] (grid_pos, grid_pos + vec2(1.0,0.0), grid_pos + vec2(-1.0,0.0),

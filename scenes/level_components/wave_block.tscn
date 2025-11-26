@@ -9,11 +9,9 @@
 resource_local_to_scene = true
 shader = ExtResource("3_a6e1n")
 shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/sprite_size = Vector2(0, 0)
 shader_parameter/move_speed = 3.0
-shader_parameter/dot_pixel_interval = 3
 shader_parameter/radius = 0.3
-shader_parameter/amplitude = 1.0
+shader_parameter/amplitude = 10.0
 
 [sub_resource type="Gradient" id="Gradient_8jpgc"]
 

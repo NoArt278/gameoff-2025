@@ -4,9 +4,16 @@ class_name WaveBlock
 
 @export var target_position : Vector2
 var spawn_position : Vector2
+var base_amplitude : float = 5.0
+var base_move_speed : float = 3.0
+var base_pixel_interval : float = 5.0
 
 func _ready() -> void:
+	super()
 	spawn_position = position
+	noise_shader_material.set_shader_parameter("amplitude", base_amplitude)
+	noise_shader_material.set_shader_parameter("move_speed", base_move_speed)
+	noise_shader_material.set_shader_parameter("pixel_interval", base_pixel_interval)
 	recolor_particles()
 
 func audio_effect(delta : float = 1) -> void:
@@ -17,8 +24,12 @@ func audio_effect(delta : float = 1) -> void:
 	
 	if curr_energy > 0 :
 		position = position.lerp(target_position, delta * curr_energy)
+		noise_shader_material.set_shader_parameter("move_speed", base_move_speed * curr_energy)
+		noise_shader_material.set_shader_parameter("pixel_interval", base_pixel_interval / curr_energy)
 	else :
 		position = position.lerp(spawn_position, delta * 0.4)
+		noise_shader_material.set_shader_parameter("move_speed", base_move_speed)
+		noise_shader_material.set_shader_parameter("pixel_interval", base_pixel_interval)
 
 func _physics_process(delta: float) -> void:
 	audio_effect(delta)

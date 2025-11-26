@@ -7,11 +7,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wexua"]
 shader = ExtResource("3_hvwgy")
 shader_parameter/color = Color(0, 1, 0.80784315, 1)
-shader_parameter/sprite_size = Vector2(20, 237)
+shader_parameter/pixel_interval = 6
 shader_parameter/move_speed = 3.0
-shader_parameter/dot_pixel_interval = 3
-shader_parameter/radius = 0.3
-shader_parameter/amplitude = 1.0
+shader_parameter/radius = 0.6
+shader_parameter/amplitude = 2.0
 
 [sub_resource type="Gradient" id="Gradient_8jpgc"]
 
@@ -30,7 +29,6 @@ height = 48.0
 script = ExtResource("1_b1uvh")
 
 [node name="ParticlesSprite" parent="." instance=ExtResource("2_msjxf")]
-z_index = 0
 material = SubResource("ShaderMaterial_wexua")
 position = Vector2(-7.152556e-07, 2.6524067e-06)
 scale = Vector2(1.3999999, 0.20253167)

@@ -1,16 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://eda0p453bo1s"]
+[gd_scene load_steps=7 format=3 uid="uid://eda0p453bo1s"]
 
 [ext_resource type="Script" uid="uid://dk4gxskcrnxtd" path="res://scripts/particle_emitter_resizer.gd" id="1_7701a"]
 [ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="1_iyal8"]
-[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="2_iyal8"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iyal8"]
-shader = ExtResource("2_iyal8")
-shader_parameter/color = Color(0.003921569, 0.33333334, 0.827451, 1)
-shader_parameter/move_speed = 3.0
-shader_parameter/dot_pixel_interval = 3
-shader_parameter/radius = 0.3
-shader_parameter/amplitude = 1.0
+[ext_resource type="Material" uid="uid://cwsewnf1d31c" path="res://assets/Material/particle_noise_material.tres" id="2_iyal8"]
 
 [sub_resource type="Gradient" id="Gradient_8jpgc"]
 
@@ -27,7 +19,7 @@ size = Vector2(20, 237)
 [node name="StaticBlock" type="StaticBody2D"]
 
 [node name="ParticlesSprite" parent="." instance=ExtResource("1_iyal8")]
-material = SubResource("ShaderMaterial_iyal8")
+material = ExtResource("2_iyal8")
 texture = SubResource("GradientTexture2D_je7og")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -6,11 +6,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4njyr"]
 shader = ExtResource("3_gelh8")
-shader_parameter/color = Color(0.5176471, 0, 0.7372549, 1)
+shader_parameter/color = Color(0.74509805, 0.31764707, 1, 1)
+shader_parameter/pixel_interval = 3
 shader_parameter/move_speed = 3.0
-shader_parameter/dot_pixel_interval = 3
 shader_parameter/radius = 0.3
-shader_parameter/amplitude = 1.0
+shader_parameter/amplitude = 2.0
 
 [sub_resource type="Gradient" id="Gradient_8jpgc"]
 
@@ -24,11 +24,11 @@ fill_to = Vector2(0, 0)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gelh8"]
 resource_local_to_scene = true
 shader = ExtResource("3_gelh8")
-shader_parameter/color = Color(0.5176471, 0, 0.7372549, 1)
+shader_parameter/color = Color(0.7469582, 0.31758508, 1, 1)
+shader_parameter/pixel_interval = 3
 shader_parameter/move_speed = 3.0
-shader_parameter/dot_pixel_interval = 3
 shader_parameter/radius = 0.3
-shader_parameter/amplitude = 1.0
+shader_parameter/amplitude = 2.0
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_4njyr"]
 resource_local_to_scene = true

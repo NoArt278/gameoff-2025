@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddeqqa15qm1ok"]
+[gd_scene load_steps=21 format=3 uid="uid://ddeqqa15qm1ok"]
 
 [ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="3_8ln24"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="3_wu84c"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/settings.tscn" id="4_wu84c"]
+[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="6_rtw2f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 48
@@ -15,14 +16,19 @@ font_size = 48
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wu84c"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8ln24"]
-normal = Vector2(0, 1)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rtw2f"]
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oa1go"]
 normal = Vector2(-1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6e1n"]
+resource_local_to_scene = true
+shader = ExtResource("6_rtw2f")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 1.0
 
 [sub_resource type="Gradient" id="Gradient_8jpgc"]
 
@@ -36,12 +42,28 @@ fill_to = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu84c"]
 size = Vector2(384, 744)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oa1go"]
+resource_local_to_scene = true
+shader = ExtResource("6_rtw2f")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 1.0
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_oa1go"]
 resource_local_to_scene = true
 gradient = SubResource("Gradient_8jpgc")
 width = 20
 height = 237
 fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbmy8"]
+resource_local_to_scene = true
+shader = ExtResource("6_rtw2f")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 1.0
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5dd4i"]
 resource_local_to_scene = true
@@ -140,12 +162,6 @@ position = Vector2(557, 643)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnaffectedByVisibility/Walls/StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_wu84c")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="UnaffectedByVisibility/Walls"]
-position = Vector2(557, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UnaffectedByVisibility/Walls/StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_8ln24")
-
 [node name="StaticBody2D3" type="StaticBody2D" parent="UnaffectedByVisibility/Walls"]
 position = Vector2(1, 326)
 
@@ -167,6 +183,7 @@ position = Vector2(192, 421)
 target_position = Vector2(192, 0)
 
 [node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="0"]
+material = SubResource("ShaderMaterial_a6e1n")
 texture = SubResource("GradientTexture2D_76cae")
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="1"]
@@ -180,6 +197,7 @@ target_position = Vector2(576, 0)
 frequency_effect_range = 1
 
 [node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock2" index="0"]
+material = SubResource("ShaderMaterial_oa1go")
 texture = SubResource("GradientTexture2D_oa1go")
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock2" index="1"]
@@ -193,6 +211,7 @@ target_position = Vector2(960, 0)
 frequency_effect_range = 2
 
 [node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock3" index="0"]
+material = SubResource("ShaderMaterial_tbmy8")
 texture = SubResource("GradientTexture2D_5dd4i")
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock3" index="1"]

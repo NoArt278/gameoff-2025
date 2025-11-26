@@ -6,7 +6,11 @@ enum AudioRange { LOW, MEDIUM, HIGH }
 
 @export var frequency_effect_range : AudioRange
 @onready var particle_sprite: Sprite2D = $ParticlesSprite
+var noise_shader_material: ShaderMaterial
 var current_color: Color = Color.WHITE
+
+func _ready() -> void:
+	noise_shader_material = particle_sprite.material
 
 @abstract func audio_effect(delta : float = 1) -> void
 
