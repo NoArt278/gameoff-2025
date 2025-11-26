@@ -19,8 +19,10 @@ func recolor_particles() -> void:
 	super()
 	
 	if not(affected_by_audio) :
-		particles.color = unaffected_by_audio_color
 		destroy_particles.color = unaffected_by_audio_color
+		var shader_material : ShaderMaterial = particle_sprite.material
+		current_color = unaffected_by_audio_color
+		shader_material.set_shader_parameter("color", current_color)
 
 func _physics_process(delta: float) -> void:
 	if not(is_destroyed) and is_currently_visible :

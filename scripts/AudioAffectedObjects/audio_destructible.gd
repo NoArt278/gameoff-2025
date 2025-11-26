@@ -18,7 +18,7 @@ func audio_effect(_delta : float = 1) -> void:
 	var max_freq : float = Globals.get_min_frequency() + (global_freq_range * (frequency_effect_range + 1) / AudioRange.size())
 	var curr_energy : float = Globals.wave_manager.get_audio_energy(min_freq, max_freq)
 	
-	if curr_energy > 0 :
+	if curr_energy > 0.2 :
 		destroy()
 
 func _physics_process(delta: float) -> void:
@@ -35,11 +35,11 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func destroy() -> void:
 	is_destroyed = true
 	collision_shape_2d.set_deferred("disabled", true)
-	particles.emitting = false
+	particle_sprite.visible = false
 	destroy_particles.restart()
 	await destroy_particles.finished
 	queue_free()
 
 func recolor_particles() -> void:
 	super()
-	destroy_particles.color = particles.color
+	destroy_particles.color = current_color

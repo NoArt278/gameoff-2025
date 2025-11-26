@@ -1,12 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjrjlclkclwgw"]
+[gd_scene load_steps=12 format=3 uid="uid://bjrjlclkclwgw"]
 
 [ext_resource type="PackedScene" uid="uid://eda0p453bo1s" path="res://scenes/level_components/static_block.tscn" id="1_fiq81"]
 [ext_resource type="PackedScene" uid="uid://daap64ll2uons" path="res://scenes/level_components/goal.tscn" id="3_qpwj6"]
 [ext_resource type="PackedScene" uid="uid://c4fp37qyd3lof" path="res://scenes/level_components/bullet_shooter.tscn" id="4_0qepi"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="4_ibugp"]
 
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_je7og"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(1151.25, 278.25)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0qepi"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l37oo"]
 size = Vector2(1153.5, 268)
@@ -24,8 +40,8 @@ normal = Vector2(-1, 0)
 [node name="StaticBlock" parent="StaticBlocks" instance=ExtResource("1_fiq81")]
 position = Vector2(109, 78)
 
-[node name="Particles" parent="StaticBlocks/StaticBlock" index="0"]
-emission_rect_extents = Vector2(214, 79.25)
+[node name="ParticlesSprite" parent="StaticBlocks/StaticBlock" index="0"]
+texture = SubResource("GradientTexture2D_je7og")
 
 [node name="CollisionShape2D" parent="StaticBlocks/StaticBlock" index="1"]
 position = Vector2(465.375, 59.875)
@@ -34,8 +50,8 @@ shape = SubResource("RectangleShape2D_6iamk")
 [node name="StaticBlock2" parent="StaticBlocks" instance=ExtResource("1_fiq81")]
 position = Vector2(960, 182)
 
-[node name="Particles" parent="StaticBlocks/StaticBlock2" index="0"]
-emission_rect_extents = Vector2(214, 79.25)
+[node name="ParticlesSprite" parent="StaticBlocks/StaticBlock2" index="0"]
+texture = SubResource("GradientTexture2D_0qepi")
 
 [node name="CollisionShape2D" parent="StaticBlocks/StaticBlock2" index="1"]
 position = Vector2(-386.25, 331)

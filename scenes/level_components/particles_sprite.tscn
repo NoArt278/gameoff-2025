@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b86nx5l1h8hjd"]
+
+[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="1_82x1w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6e1n"]
+resource_local_to_scene = true
+shader = ExtResource("1_82x1w")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/sprite_size = Vector2(20, 237)
+shader_parameter/amplitude = 20.0
+shader_parameter/frequency = 0.05
+shader_parameter/speed = 1.5
+shader_parameter/thickness = 2.0
+
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_76cae"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[node name="ParticlesSprite" type="Sprite2D"]
+z_index = -5
+material = SubResource("ShaderMaterial_a6e1n")
+texture = SubResource("GradientTexture2D_76cae")

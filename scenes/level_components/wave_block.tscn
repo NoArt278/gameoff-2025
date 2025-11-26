@@ -1,7 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7rbxvsvbojsg"]
+[gd_scene load_steps=9 format=3 uid="uid://c7rbxvsvbojsg"]
 
 [ext_resource type="Script" uid="uid://csqpu3xxcrr7b" path="res://scripts/AudioAffectedObjects/wave_block.gd" id="1_4pe3f"]
+[ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="2_a6e1n"]
 [ext_resource type="Script" uid="uid://dk4gxskcrnxtd" path="res://scripts/particle_emitter_resizer.gd" id="2_ohhdr"]
+[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="3_a6e1n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6e1n"]
+resource_local_to_scene = true
+shader = ExtResource("3_a6e1n")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/sprite_size = Vector2(0, 0)
+shader_parameter/move_speed = 3.0
+shader_parameter/dot_pixel_interval = 3
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 1.0
+
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_76cae"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pe3f"]
 size = Vector2(164, 362.375)
@@ -9,18 +30,9 @@ size = Vector2(164, 362.375)
 [node name="WaveBlock" type="AnimatableBody2D"]
 script = ExtResource("1_4pe3f")
 
-[node name="Particles" type="CPUParticles2D" parent="."]
-process_mode = 3
-position = Vector2(0, 108.5)
-amount = 80
-local_coords = true
-emission_shape = 3
-emission_rect_extents = Vector2(10, 118.36)
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_max = 5.0
-scale_amount_min = 2.0
-scale_amount_max = 2.0
+[node name="ParticlesSprite" parent="." instance=ExtResource("2_a6e1n")]
+material = SubResource("ShaderMaterial_a6e1n")
+texture = SubResource("GradientTexture2D_76cae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 108.5)

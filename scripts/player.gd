@@ -6,7 +6,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var destroy_particles: CPUParticles2D = $DestroyParticles
-@onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
+@onready var particles_sprite: Sprite2D = $ParticlesSprite
 var can_move: bool = true
 
 signal died
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 func die() -> void:
 	can_move = false
-	cpu_particles_2d.emitting = false
+	particles_sprite.visible = false
 	destroy_particles.restart()
 	await destroy_particles.finished
 	died.emit()

@@ -1,24 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://eda0p453bo1s"]
+[gd_scene load_steps=8 format=3 uid="uid://eda0p453bo1s"]
 
 [ext_resource type="Script" uid="uid://dk4gxskcrnxtd" path="res://scripts/particle_emitter_resizer.gd" id="1_7701a"]
+[ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="1_iyal8"]
+[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="2_iyal8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iyal8"]
+shader = ExtResource("2_iyal8")
+shader_parameter/color = Color(0.003921569, 0.33333334, 0.827451, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/dot_pixel_interval = 3
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 1.0
+
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_je7og"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rugbh"]
 size = Vector2(20, 237)
 
 [node name="StaticBlock" type="StaticBody2D"]
 
-[node name="Particles" type="CPUParticles2D" parent="."]
-process_mode = 3
-amount = 80
-local_coords = true
-emission_shape = 3
-emission_rect_extents = Vector2(10, 118.36)
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_max = 5.0
-scale_amount_min = 2.0
-scale_amount_max = 2.0
-color = Color(0.003921569, 0.33333334, 0.827451, 1)
+[node name="ParticlesSprite" parent="." instance=ExtResource("1_iyal8")]
+material = SubResource("ShaderMaterial_iyal8")
+texture = SubResource("GradientTexture2D_je7og")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rugbh")

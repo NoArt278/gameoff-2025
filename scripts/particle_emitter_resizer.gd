@@ -1,9 +1,11 @@
 extends CollisionShape2D
 
-@onready var particles: CPUParticles2D = $"../Particles"
-
+@onready var particles_sprite: Sprite2D = $"../ParticlesSprite"
 
 func _ready() -> void:
 	var collision_shape : RectangleShape2D = shape
-	particles.emission_rect_extents = Vector2(collision_shape.size.x / 2, collision_shape.size.y / 2)
-	particles.position = position
+	
+	var gradient_texture : GradientTexture2D = particles_sprite.texture
+	gradient_texture.width = ceil(collision_shape.size.x)
+	gradient_texture.height = ceil(collision_shape.size.y)
+	particles_sprite.position = position

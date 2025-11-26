@@ -1,15 +1,38 @@
-[gd_scene load_steps=11 format=3 uid="uid://c25o74dpnjm61"]
+[gd_scene load_steps=16 format=3 uid="uid://c25o74dpnjm61"]
 
 [ext_resource type="PackedScene" uid="uid://eda0p453bo1s" path="res://scenes/level_components/static_block.tscn" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="2_6iamk"]
 [ext_resource type="PackedScene" uid="uid://daap64ll2uons" path="res://scenes/level_components/goal.tscn" id="3_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="4_x42e6"]
 
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_je7og"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6761a"]
 size = Vector2(609, 158.5)
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x42e6"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6iamk"]
 size = Vector2(1150.5, 158.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6761a"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrm0"]
 size = Vector2(381, 337.25)
@@ -19,6 +42,13 @@ normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x42e6"]
 normal = Vector2(-1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_76cae"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x42e6"]
 size = Vector2(164, 479.1875)
@@ -30,8 +60,8 @@ size = Vector2(164, 479.1875)
 [node name="StaticBlock" parent="StaticBlocks" instance=ExtResource("1_ksju7")]
 position = Vector2(304, 569)
 
-[node name="Particles" parent="StaticBlocks/StaticBlock" index="0"]
-emission_rect_extents = Vector2(214, 79.25)
+[node name="ParticlesSprite" parent="StaticBlocks/StaticBlock" index="0"]
+texture = SubResource("GradientTexture2D_je7og")
 
 [node name="CollisionShape2D" parent="StaticBlocks/StaticBlock" index="1"]
 position = Vector2(-0.5, 0)
@@ -40,8 +70,8 @@ shape = SubResource("RectangleShape2D_6761a")
 [node name="StaticBlock3" parent="StaticBlocks" instance=ExtResource("1_ksju7")]
 position = Vector2(304, 80)
 
-[node name="Particles" parent="StaticBlocks/StaticBlock3" index="0"]
-emission_rect_extents = Vector2(214, 79.25)
+[node name="ParticlesSprite" parent="StaticBlocks/StaticBlock3" index="0"]
+texture = SubResource("GradientTexture2D_x42e6")
 
 [node name="CollisionShape2D" parent="StaticBlocks/StaticBlock3" index="1"]
 position = Vector2(271.75, 0)
@@ -50,8 +80,8 @@ shape = SubResource("RectangleShape2D_6iamk")
 [node name="StaticBlock2" parent="StaticBlocks" instance=ExtResource("1_ksju7")]
 position = Vector2(985, 569)
 
-[node name="Particles" parent="StaticBlocks/StaticBlock2" index="0"]
-emission_rect_extents = Vector2(214, 79.25)
+[node name="ParticlesSprite" parent="StaticBlocks/StaticBlock2" index="0"]
+texture = SubResource("GradientTexture2D_6761a")
 
 [node name="CollisionShape2D" parent="StaticBlocks/StaticBlock2" index="1"]
 position = Vector2(-23.5, -89.375)
@@ -77,6 +107,9 @@ shape = SubResource("WorldBoundaryShape2D_x42e6")
 [node name="WaveBlock" parent="WaveBlocks" instance=ExtResource("2_6iamk")]
 position = Vector2(690, 476)
 target_position = Vector2(690, 340)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock" index="0"]
+texture = SubResource("GradientTexture2D_76cae")
 
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock" index="1"]
 position = Vector2(0, 211)

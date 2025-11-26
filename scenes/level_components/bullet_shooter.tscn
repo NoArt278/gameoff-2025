@@ -1,7 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4fp37qyd3lof"]
+[gd_scene load_steps=10 format=3 uid="uid://c4fp37qyd3lof"]
 
-[ext_resource type="Script" uid="uid://dk4gxskcrnxtd" path="res://scripts/particle_emitter_resizer.gd" id="1_4wsqh"]
 [ext_resource type="Script" uid="uid://sj5mqrklwybr" path="res://scripts/bullet_shooter.gd" id="1_gelh8"]
+[ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="2_4njyr"]
+[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="3_gelh8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4njyr"]
+shader = ExtResource("3_gelh8")
+shader_parameter/color = Color(0.5176471, 0, 0.7372549, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/dot_pixel_interval = 3
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 1.0
+
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ek3cp"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gelh8"]
+resource_local_to_scene = true
+shader = ExtResource("3_gelh8")
+shader_parameter/color = Color(0.5176471, 0, 0.7372549, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/dot_pixel_interval = 3
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 1.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4njyr"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqoj5"]
 size = Vector2(33, 37)
@@ -10,36 +44,20 @@ size = Vector2(33, 37)
 script = ExtResource("1_gelh8")
 bullet_speed = 100.0
 
-[node name="Particles" type="CPUParticles2D" parent="."]
-process_mode = 3
-amount = 30
-local_coords = true
-emission_shape = 3
-emission_rect_extents = Vector2(16.5, 18.5)
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_max = 5.0
-scale_amount_min = 2.0
-scale_amount_max = 2.0
-color = Color(0.51736516, 0.0018450442, 0.73737115, 1)
+[node name="ParticlesSprite" parent="." instance=ExtResource("2_4njyr")]
+material = SubResource("ShaderMaterial_4njyr")
+position = Vector2(-2.3841858e-07, -1.66893e-06)
+scale = Vector2(1.6, 0.15189873)
+texture = SubResource("GradientTexture2D_ek3cp")
 
-[node name="Particles2" type="CPUParticles2D" parent="."]
-process_mode = 3
-position = Vector2(-30, 0)
-amount = 30
-local_coords = true
-emission_shape = 3
-emission_rect_extents = Vector2(13.8, 8.48)
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_max = 5.0
-scale_amount_min = 2.0
-scale_amount_max = 2.0
-color = Color(0.51736516, 0.0018450442, 0.73737115, 1)
+[node name="ParticlesSprite2" parent="." instance=ExtResource("2_4njyr")]
+material = SubResource("ShaderMaterial_gelh8")
+position = Vector2(-30, 4.7683716e-07)
+scale = Vector2(1.4, 0.067510545)
+texture = SubResource("GradientTexture2D_4njyr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dqoj5")
-script = ExtResource("1_4wsqh")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

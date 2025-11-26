@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddeqqa15qm1ok"]
+[gd_scene load_steps=18 format=3 uid="uid://ddeqqa15qm1ok"]
 
 [ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="3_8ln24"]
@@ -24,8 +24,31 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oa1go"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_76cae"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu84c"]
 size = Vector2(384, 744)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oa1go"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5dd4i"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -143,9 +166,8 @@ process_mode = 3
 position = Vector2(192, 421)
 target_position = Vector2(192, 0)
 
-[node name="Particles" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="0"]
-position = Vector2(0, 362)
-emission_rect_extents = Vector2(192, 372)
+[node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="0"]
+texture = SubResource("GradientTexture2D_76cae")
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="1"]
 position = Vector2(0, 362)
@@ -157,9 +179,8 @@ position = Vector2(576, 421)
 target_position = Vector2(576, 0)
 frequency_effect_range = 1
 
-[node name="Particles" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock2" index="0"]
-position = Vector2(0, 362)
-emission_rect_extents = Vector2(192, 372)
+[node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock2" index="0"]
+texture = SubResource("GradientTexture2D_oa1go")
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock2" index="1"]
 position = Vector2(0, 362)
@@ -171,9 +192,8 @@ position = Vector2(960, 421)
 target_position = Vector2(960, 0)
 frequency_effect_range = 2
 
-[node name="Particles" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock3" index="0"]
-position = Vector2(0, 362)
-emission_rect_extents = Vector2(192, 372)
+[node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock3" index="0"]
+texture = SubResource("GradientTexture2D_5dd4i")
 
 [node name="CollisionShape2D" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock3" index="1"]
 position = Vector2(0, 362)
