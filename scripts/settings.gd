@@ -7,7 +7,6 @@ class_name Setting
 @onready var mic_sensitivity_slider: HSlider = $MicSensitivitySlider
 @onready var min_freq_slider: HSlider = $MinFreqSlider
 @onready var max_freq_slider: HSlider = $MaxFreqSlider
-@onready var input_audio_stream: AudioStreamPlayer2D = $InputAudioStream
 @onready var mic_toggle: CheckButton = $MicToggle
 
 var spectrum : AudioEffectSpectrumAnalyzerInstance

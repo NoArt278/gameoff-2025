@@ -1,4 +1,4 @@
-@abstract extends StaticBody2D
+@abstract extends Node2D
 
 class_name AudioAffectedObject
 
@@ -10,7 +10,8 @@ var noise_shader_material: ShaderMaterial
 var current_color: Color = Color.WHITE
 
 func _ready() -> void:
-	noise_shader_material = particle_sprite.material
+	if particle_sprite :
+		noise_shader_material = particle_sprite.material
 
 @abstract func audio_effect(delta : float = 1) -> void
 

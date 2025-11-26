@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmku86o88i4pr"]
+[gd_scene load_steps=13 format=3 uid="uid://cmku86o88i4pr"]
 
 [ext_resource type="Script" uid="uid://ys7f084t60e6" path="res://scripts/player.gd" id="1_b1uvh"]
 [ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="2_msjxf"]
 [ext_resource type="Shader" uid="uid://g7rhwawfuv3k" path="res://assets/Shaders/local_particle_noise.gdshader" id="3_hvwgy"]
+[ext_resource type="Shader" uid="uid://c5qq4icf300kx" path="res://assets/Shaders/noise_indicator.gdshader" id="4_htyg1"]
+[ext_resource type="Script" uid="uid://d3gbc0xrrshmy" path="res://scripts/AudioAffectedObjects/sound_indicator.gd" id="4_wexua"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wexua"]
 shader = ExtResource("3_hvwgy")
@@ -25,6 +27,20 @@ fill_to = Vector2(0, 0)
 radius = 14.0
 height = 48.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k4qg"]
+shader = ExtResource("4_htyg1")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/outer_radius = 26.0
+shader_parameter/inner_radius = 25.5
+shader_parameter/amplitude = 5.0
+shader_parameter/frequency = 20.0
+
+[sub_resource type="Gradient" id="Gradient_htyg1"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6k4qg"]
+gradient = SubResource("Gradient_htyg1")
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_b1uvh")
 
@@ -35,6 +51,7 @@ scale = Vector2(1.3999999, 0.20253167)
 texture = SubResource("GradientTexture2D_htyg1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="DestroyParticles" type="CPUParticles2D" parent="."]
@@ -47,3 +64,10 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 93.96
 initial_velocity_max = 174.5
+
+[node name="SoundIndicator" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6k4qg")
+position = Vector2(1.9073486e-06, -1.9073486e-06)
+scale = Vector2(1.28125, 1.28125)
+texture = SubResource("GradientTexture2D_6k4qg")
+script = ExtResource("4_wexua")
