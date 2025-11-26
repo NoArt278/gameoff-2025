@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0k2bchpemght"]
+[gd_scene load_steps=6 format=3 uid="uid://b0k2bchpemght"]
 
 [ext_resource type="Script" uid="uid://dpt4uy4xk3r82" path="res://scripts/settings.gd" id="1_5p8wc"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="2_r6d6q"]
@@ -8,8 +8,6 @@
 font_size = 48
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wm04"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5p8wc"]
 
 [node name="Settings" type="Control"]
 process_mode = 3
@@ -237,11 +235,37 @@ grow_horizontal = 2
 theme = ExtResource("3_6wm04")
 text = "Maximum Frequency"
 
-[node name="InputAudioStream" type="AudioStreamPlayer2D" parent="."]
-visible = false
-stream = SubResource("AudioStreamMicrophone_5p8wc")
-autoplay = true
-bus = &"Microphone"
+[node name="MicToggle" type="CheckButton" parent="."]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 133.0
+offset_right = -81.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MicToggle"]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -17.0
+offset_right = 205.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_6wm04")
+text = "Use Microphone"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
@@ -249,3 +273,4 @@ bus = &"Microphone"
 [connection signal="value_changed" from="MicSensitivitySlider" to="." method="_on_mic_sensitivity_slider_value_changed"]
 [connection signal="value_changed" from="MinFreqSlider" to="." method="_on_min_freq_slider_value_changed"]
 [connection signal="value_changed" from="MaxFreqSlider" to="." method="_on_max_freq_slider_value_changed"]
+[connection signal="toggled" from="MicToggle" to="." method="_on_mic_toggle_toggled"]

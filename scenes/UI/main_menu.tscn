@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ddeqqa15qm1ok"]
+[gd_scene load_steps=23 format=3 uid="uid://ddeqqa15qm1ok"]
 
 [ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="3_8ln24"]
@@ -13,8 +13,6 @@
 font_size = 48
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_8ln24"]
 
 [sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_wu84c"]
 
@@ -174,13 +172,6 @@ process_mode = 3
 [node name="Player" parent="UnaffectedByVisibility" instance=ExtResource("3_wu84c")]
 process_mode = 3
 position = Vector2(300, 210)
-
-[node name="InputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
-process_mode = 3
-position = Vector2(553, 557)
-stream = SubResource("AudioStreamMicrophone_8ln24")
-autoplay = true
-bus = &"Microphone"
 
 [node name="OutputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
 process_mode = 3

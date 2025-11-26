@@ -8,6 +8,7 @@ class_name Setting
 @onready var min_freq_slider: HSlider = $MinFreqSlider
 @onready var max_freq_slider: HSlider = $MaxFreqSlider
 @onready var input_audio_stream: AudioStreamPlayer2D = $InputAudioStream
+@onready var mic_toggle: CheckButton = $MicToggle
 
 var spectrum : AudioEffectSpectrumAnalyzerInstance
 var prev_screen : Control = null
@@ -33,6 +34,7 @@ func _ready() -> void:
 	mic_sensitivity_slider.value = Globals.mic_sensitivity
 	min_freq_slider.value = Globals.min_frequency
 	max_freq_slider.value = Globals.max_frequency
+	mic_toggle.button_pressed = Globals.use_microphone
 	
 	var idx = AudioServer.get_bus_index("Microphone")
 	spectrum = AudioServer.get_bus_effect_instance(idx, 1)
@@ -62,3 +64,7 @@ func _on_back_button_pressed() -> void:
 func _on_main_menu_button_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
+
+
+func _on_mic_toggle_toggled(toggled_on: bool) -> void:
+	Globals.toggle_microphone(toggled_on)

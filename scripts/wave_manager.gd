@@ -4,6 +4,7 @@ class_name WaveManager
 
 var effect : AudioEffectRecord
 var spectrum : AudioEffectSpectrumAnalyzerInstance
+@onready var mic_input: AudioStreamPlayer2D = $MicInput
 #var screen_size : Vector2
 #var blocks : Array[Node2D]
 #var is_setup_done : bool = false

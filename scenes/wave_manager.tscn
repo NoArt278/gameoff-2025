@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbobdx6wwq2it"]
+[gd_scene load_steps=4 format=3 uid="uid://dbobdx6wwq2it"]
 
 [ext_resource type="Script" uid="uid://d3cm3ud06ilnl" path="res://scripts/wave_manager.gd" id="1_8fe1o"]
 
@@ -6,6 +6,13 @@
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1)
 
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_8fe1o"]
+
 [node name="WaveManager" type="Node"]
 script = ExtResource("1_8fe1o")
 block_color_gradient = SubResource("Gradient_8fe1o")
+
+[node name="MicInput" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamMicrophone_8fe1o")
+autoplay = true
+bus = &"Microphone"
