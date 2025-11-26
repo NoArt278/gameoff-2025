@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0k2bchpemght"]
+[gd_scene load_steps=7 format=3 uid="uid://b0k2bchpemght"]
 
 [ext_resource type="Script" uid="uid://dpt4uy4xk3r82" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="2_r6d6q"]
+[ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="3_6wm04"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 48
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wm04"]
 
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_5p8wc"]
 
@@ -28,6 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -43,6 +48,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -55,9 +61,22 @@ offset_right = 23.0
 offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("3_6wm04")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6wm04")
 text = "Close Settings"
 
 [node name="MainMenuButton" type="Button" parent="."]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -70,9 +89,22 @@ offset_right = 23.0
 offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("3_6wm04")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_6wm04")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6wm04")
 text = "Main Menu"
 
 [node name="VolumeSlider" type="HSlider" parent="."]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -91,18 +123,21 @@ step = 0.1
 value = 0.001
 
 [node name="Label" type="Label" parent="VolumeSlider"]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = -28.0
-offset_right = 20.0
-offset_bottom = -5.0
+offset_left = -46.0
+offset_top = -39.0
+offset_right = 46.0
+offset_bottom = -4.0
 grow_horizontal = 2
+theme = ExtResource("3_6wm04")
 text = "Volume"
 
 [node name="MicSensitivitySlider" type="HSlider" parent="."]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -121,18 +156,21 @@ step = 0.1
 value = 1.0
 
 [node name="Label" type="Label" parent="MicSensitivitySlider"]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = -28.0
-offset_right = 20.0
-offset_bottom = -5.0
+offset_left = -103.0
+offset_top = -36.0
+offset_right = 103.0
+offset_bottom = -1.0
 grow_horizontal = 2
+theme = ExtResource("3_6wm04")
 text = "Sound Sensitivity"
 
 [node name="MinFreqSlider" type="HSlider" parent="."]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -150,18 +188,21 @@ max_value = 2092.0
 value = 65.41
 
 [node name="Label" type="Label" parent="MinFreqSlider"]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = -28.0
-offset_right = 20.0
-offset_bottom = -5.0
+offset_left = -125.0
+offset_top = -37.0
+offset_right = 125.0
+offset_bottom = -2.0
 grow_horizontal = 2
+theme = ExtResource("3_6wm04")
 text = "Minimum Frequency"
 
 [node name="MaxFreqSlider" type="HSlider" parent="."]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -179,15 +220,17 @@ max_value = 2093.0
 value = 2093.0
 
 [node name="Label" type="Label" parent="MaxFreqSlider"]
+material = ExtResource("2_r6d6q")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = -28.0
-offset_right = 20.0
-offset_bottom = -5.0
+offset_left = -127.0
+offset_top = -38.0
+offset_right = 128.0
+offset_bottom = -3.0
 grow_horizontal = 2
+theme = ExtResource("3_6wm04")
 text = "Maximum Frequency"
 
 [node name="InputAudioStream" type="AudioStreamPlayer2D" parent="."]
