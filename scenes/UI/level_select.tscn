@@ -1,9 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://brjnfy2555cvi"]
+[gd_scene load_steps=22 format=3 uid="uid://brjnfy2555cvi"]
 
 [ext_resource type="Script" uid="uid://dkeh8gh4u0l15" path="res://scripts/level_select.gd" id="1_chg43"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="2_r77uv"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="2_ty08u"]
-[ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="3_4nqmc"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_7plkq"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="5_ckc44"]
 [ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="6_r77uv"]
@@ -11,10 +10,6 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 48
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_8ln24"]
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_wu84c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wu84c"]
 
@@ -117,20 +112,6 @@ process_mode = 3
 [node name="Player" parent="UnaffectedByVisibility" instance=ExtResource("2_r77uv")]
 process_mode = 3
 position = Vector2(300, 210)
-
-[node name="InputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
-process_mode = 3
-position = Vector2(553, 557)
-stream = SubResource("AudioStreamMicrophone_8ln24")
-autoplay = true
-bus = &"Microphone"
-
-[node name="OutputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
-process_mode = 3
-position = Vector2(-4, 2)
-stream = SubResource("AudioStreamGenerator_wu84c")
-bus = &"Microphone"
-script = ExtResource("3_4nqmc")
 
 [node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_7plkq")]
 

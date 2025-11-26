@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbobdx6wwq2it"]
+[gd_scene load_steps=5 format=3 uid="uid://dbobdx6wwq2it"]
 
 [ext_resource type="Script" uid="uid://d3cm3ud06ilnl" path="res://scripts/wave_manager.gd" id="1_8fe1o"]
+[ext_resource type="PackedScene" uid="uid://beftgbctm1h5" path="res://scenes/output_audio_stream.tscn" id="2_5np0c"]
 
 [sub_resource type="Gradient" id="Gradient_8fe1o"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -16,3 +17,5 @@ block_color_gradient = SubResource("Gradient_8fe1o")
 stream = SubResource("AudioStreamMicrophone_8fe1o")
 autoplay = true
 bus = &"Microphone"
+
+[node name="OutputAudioStream" parent="." instance=ExtResource("2_5np0c")]

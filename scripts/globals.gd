@@ -21,9 +21,9 @@ var wave_manager : WaveManager
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	load_data()
 	wave_manager = WAVE_MANAGER.instantiate()
 	add_child(wave_manager)
+	load_data()
 
 func get_max_frequency() -> float : 
 	return max(min_frequency, max_frequency)
@@ -51,6 +51,7 @@ func load_data() -> void:
 		min_frequency = conf.get_value("settings", "min_frequency", ABSOLUTE_MIN_FREQUENCY)
 		max_frequency = conf.get_value("settings", "max_frequency", ABSOLUTE_MAX_FREQUENCY)
 		use_microphone = conf.get_value("settings", "use_microphone", true)
+		toggle_microphone(use_microphone)
 		
 		last_finished_level = conf.get_value("level", "last_finished_level", 1)
 	else:

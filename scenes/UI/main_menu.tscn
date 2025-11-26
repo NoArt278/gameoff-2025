@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://ddeqqa15qm1ok"]
+[gd_scene load_steps=21 format=3 uid="uid://ddeqqa15qm1ok"]
 
 [ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="3_8ln24"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="3_jk1qb"]
 [ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="3_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="3_wu84c"]
@@ -13,8 +12,6 @@
 font_size = 48
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_wu84c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wu84c"]
 
@@ -172,13 +169,6 @@ process_mode = 3
 [node name="Player" parent="UnaffectedByVisibility" instance=ExtResource("3_wu84c")]
 process_mode = 3
 position = Vector2(300, 210)
-
-[node name="OutputAudioStream" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
-process_mode = 3
-position = Vector2(-4, 2)
-stream = SubResource("AudioStreamGenerator_wu84c")
-bus = &"Microphone"
-script = ExtResource("3_8ln24")
 
 [node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_wu84c")]
 

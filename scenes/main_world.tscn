@@ -1,13 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvo2ju2rtabod"]
+[gd_scene load_steps=11 format=3 uid="uid://dvo2ju2rtabod"]
 
 [ext_resource type="Script" uid="uid://bil6mkiw5rw2b" path="res://scripts/hud.gd" id="3_bdp8l"]
 [ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="3_jj0au"]
 [ext_resource type="PackedScene" uid="uid://be0oalagyckgu" path="res://scenes/level_manager.tscn" id="3_wjoj8"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="3_wy0bs"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_bdp8l"]
-[ext_resource type="Script" uid="uid://ba2hm8tjd8ygs" path="res://scripts/audio_player.gd" id="4_jj0au"]
-
-[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_jj0au"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jj0au"]
 
@@ -24,12 +21,6 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(576, 326)
-
-[node name="OutputAudioStream" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = SubResource("AudioStreamGenerator_jj0au")
-bus = &"Microphone"
-script = ExtResource("4_jj0au")
 
 [node name="HUD" type="Control" parent="."]
 process_mode = 3
