@@ -1,14 +1,245 @@
-[gd_scene load_steps=6 format=3 uid="uid://isqut0xnwr3y"]
+[gd_scene load_steps=39 format=3 uid="uid://isqut0xnwr3y"]
 
 [ext_resource type="Script" uid="uid://b85aeuhx60iy0" path="res://scripts/finish_screen.gd" id="1_xleaw"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="2_groyn"]
+[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="3_d2rwm"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="4_aj5v1"]
+[ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="5_tjvmu"]
+[ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="6_4xvoi"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksju7"]
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tjvmu"]
 normal = Vector2(-1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6e1n"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_76cae"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjvmu"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4xvoi"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fb7dl"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gh6aa"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdq5w"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8iqvy"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sr7i0"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kunwa"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pus4c"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0fpyf"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tgba"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rxl16"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vcvc0"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b72ul"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tp7v6"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s80d2"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13did"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3kn3k"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qvf2x"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0sito"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmyec"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c14g3"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rjxgj"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r083e"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0q02t"]
+resource_local_to_scene = true
+shader = ExtResource("3_d2rwm")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c5rem"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2rwm"]
 
 [node name="FinishScreen" type="Node2D"]
 script = ExtResource("1_xleaw")
@@ -33,6 +264,10 @@ shape = SubResource("WorldBoundaryShape2D_tjvmu")
 position = Vector2(83, 466)
 target_position = Vector2(83, 319)
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock" index="0"]
+material = SubResource("ShaderMaterial_a6e1n")
+texture = SubResource("GradientTexture2D_76cae")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock" index="1"]
 position = Vector2(0, 170.8125)
 
@@ -40,6 +275,10 @@ position = Vector2(0, 170.8125)
 position = Vector2(248, 466)
 target_position = Vector2(248, 319)
 frequency_effect_range = 1
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock2" index="0"]
+material = SubResource("ShaderMaterial_tjvmu")
+texture = SubResource("GradientTexture2D_4xvoi")
 
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock2" index="1"]
 position = Vector2(0, 170.8125)
@@ -49,12 +288,20 @@ position = Vector2(413, 466)
 target_position = Vector2(413, 319)
 frequency_effect_range = 2
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock3" index="0"]
+material = SubResource("ShaderMaterial_fb7dl")
+texture = SubResource("GradientTexture2D_gh6aa")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock3" index="1"]
 position = Vector2(0, 170.8125)
 
 [node name="WaveBlock4" parent="WaveBlocks" instance=ExtResource("2_groyn")]
 position = Vector2(578, 466)
 target_position = Vector2(578, 319)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock4" index="0"]
+material = SubResource("ShaderMaterial_bdq5w")
+texture = SubResource("GradientTexture2D_8iqvy")
 
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock4" index="1"]
 position = Vector2(0, 170.8125)
@@ -64,6 +311,10 @@ position = Vector2(742, 466)
 target_position = Vector2(742, 319)
 frequency_effect_range = 1
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock5" index="0"]
+material = SubResource("ShaderMaterial_sr7i0")
+texture = SubResource("GradientTexture2D_kunwa")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock5" index="1"]
 position = Vector2(0, 170.8125)
 
@@ -72,12 +323,20 @@ position = Vector2(906, 466)
 target_position = Vector2(906, 319)
 frequency_effect_range = 2
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock6" index="0"]
+material = SubResource("ShaderMaterial_pus4c")
+texture = SubResource("GradientTexture2D_0fpyf")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock6" index="1"]
 position = Vector2(0, 170.8125)
 
 [node name="WaveBlock7" parent="WaveBlocks" instance=ExtResource("2_groyn")]
 position = Vector2(1071, 466)
 target_position = Vector2(1071, 319)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock7" index="0"]
+material = SubResource("ShaderMaterial_7tgba")
+texture = SubResource("GradientTexture2D_rxl16")
 
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock7" index="1"]
 position = Vector2(0, 170.8125)
@@ -88,6 +347,10 @@ rotation = -3.1415927
 target_position = Vector2(83, 250)
 frequency_effect_range = 1
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock8" index="0"]
+material = SubResource("ShaderMaterial_vcvc0")
+texture = SubResource("GradientTexture2D_b72ul")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock8" index="1"]
 position = Vector2(0, 170.8125)
 
@@ -97,6 +360,10 @@ rotation = -3.1415927
 target_position = Vector2(248, 250)
 frequency_effect_range = 2
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock9" index="0"]
+material = SubResource("ShaderMaterial_tp7v6")
+texture = SubResource("GradientTexture2D_s80d2")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock9" index="1"]
 position = Vector2(0, 170.8125)
 
@@ -104,6 +371,10 @@ position = Vector2(0, 170.8125)
 position = Vector2(413, 124)
 rotation = -3.1415927
 target_position = Vector2(413, 250)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock10" index="0"]
+material = SubResource("ShaderMaterial_13did")
+texture = SubResource("GradientTexture2D_3kn3k")
 
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock10" index="1"]
 position = Vector2(0, 170.8125)
@@ -114,6 +385,10 @@ rotation = -3.1415927
 target_position = Vector2(578, 250)
 frequency_effect_range = 1
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock11" index="0"]
+material = SubResource("ShaderMaterial_qvf2x")
+texture = SubResource("GradientTexture2D_0sito")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock11" index="1"]
 position = Vector2(0, 170.8125)
 
@@ -123,6 +398,10 @@ rotation = -3.1415927
 target_position = Vector2(742, 250)
 frequency_effect_range = 2
 
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock12" index="0"]
+material = SubResource("ShaderMaterial_xmyec")
+texture = SubResource("GradientTexture2D_c14g3")
+
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock12" index="1"]
 position = Vector2(0, 170.8125)
 
@@ -130,6 +409,10 @@ position = Vector2(0, 170.8125)
 position = Vector2(906, 124)
 rotation = -3.1415927
 target_position = Vector2(906, 250)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock13" index="0"]
+material = SubResource("ShaderMaterial_rjxgj")
+texture = SubResource("GradientTexture2D_r083e")
 
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock13" index="1"]
 position = Vector2(0, 170.8125)
@@ -139,6 +422,10 @@ position = Vector2(1071, 124)
 rotation = -3.1415927
 target_position = Vector2(1071, 250)
 frequency_effect_range = 1
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock14" index="0"]
+material = SubResource("ShaderMaterial_0q02t")
+texture = SubResource("GradientTexture2D_c5rem")
 
 [node name="CollisionShape2D" parent="WaveBlocks/WaveBlock14" index="1"]
 position = Vector2(0, 170.8125)
@@ -157,35 +444,52 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control"]
+material = ExtResource("5_tjvmu")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.5
-offset_top = -17.0
-offset_right = 85.5
-offset_bottom = 6.0
+offset_left = -225.0
+offset_top = -30.0
+offset_right = 222.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "THANKS FOR PLAYING"
+theme_override_font_sizes/font_size = 40
+text = "THANKS FOR PLAYING !"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Return To Main" type="Button" parent="Control"]
+material = ExtResource("5_tjvmu")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = 35.0
-offset_right = 80.0
-offset_bottom = 66.0
+offset_left = -118.5
+offset_top = 42.0
+offset_right = 118.5
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_4xvoi")
+theme_override_colors/font_pressed_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_hover_color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_d2rwm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d2rwm")
 text = "Back To Main Menu"
 
 [connection signal="pressed" from="Control/Return To Main" to="." method="_on_return_to_main_pressed"]
