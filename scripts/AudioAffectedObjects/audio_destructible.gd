@@ -18,7 +18,7 @@ func audio_effect(_delta : float = 1) -> void:
 	var max_freq : float = Globals.get_min_frequency() + (global_freq_range * (frequency_effect_range + 1) / AudioRange.size())
 	var curr_energy : float = Globals.wave_manager.get_audio_energy(min_freq, max_freq)
 	
-	if curr_energy > 0.2 :
+	if curr_energy > 0.8 :
 		destroy()
 
 func _physics_process(delta: float) -> void:
