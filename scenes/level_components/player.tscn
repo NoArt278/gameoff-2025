@@ -32,7 +32,7 @@ shader = ExtResource("4_htyg1")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/move_speed = 3.0
 shader_parameter/outer_radius = 26.0
-shader_parameter/inner_radius = 25.5
+shader_parameter/inner_radius = 25.0
 shader_parameter/amplitude = 5.0
 shader_parameter/frequency = 20.0
 
@@ -67,7 +67,11 @@ initial_velocity_max = 174.5
 
 [node name="SoundIndicator" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_6k4qg")
-position = Vector2(1.9073486e-06, -1.9073486e-06)
-scale = Vector2(1.28125, 1.28125)
+scale = Vector2(1.6874999, 1.6874999)
 texture = SubResource("GradientTexture2D_6k4qg")
 script = ExtResource("4_wexua")
+
+[node name="ParticlesSprite" parent="SoundIndicator" instance=ExtResource("2_msjxf")]
+visible = false
+material = SubResource("ShaderMaterial_wexua")
+position = Vector2(-7.152556e-07, 2.6524067e-06)
