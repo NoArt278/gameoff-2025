@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 
 @onready var destroy_particles: CPUParticles2D = $DestroyParticles
 @onready var particles_sprite: Sprite2D = $ParticlesSprite
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 var can_move: bool = true
 
 signal died
@@ -34,6 +35,8 @@ func _physics_process(delta: float) -> void:
 
 func die() -> void:
 	can_move = false
+	collision_shape_2d.disabled = true
+	collision_layer = 2
 	particles_sprite.visible = false
 	destroy_particles.restart()
 	await destroy_particles.finished

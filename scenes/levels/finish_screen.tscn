@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://isqut0xnwr3y"]
 
-[ext_resource type="Script" uid="uid://b85aeuhx60iy0" path="res://scripts/finish_screen.gd" id="1_xleaw"]
+[ext_resource type="Script" uid="uid://b85aeuhx60iy0" path="res://scripts/UI/finish_screen.gd" id="1_xleaw"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="2_groyn"]
 [ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="3_d2rwm"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="4_aj5v1"]

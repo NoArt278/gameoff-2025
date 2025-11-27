@@ -1,12 +1,12 @@
 [gd_scene load_steps=26 format=3 uid="uid://ddeqqa15qm1ok"]
 
-[ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/UI/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="3_jk1qb"]
 [ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="3_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="3_wu84c"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_wu84c"]
-[ext_resource type="Script" uid="uid://bbm7d48uc35sf" path="res://scripts/tutorial.gd" id="6_5d4ag"]
+[ext_resource type="Script" uid="uid://bbm7d48uc35sf" path="res://scripts/UI/tutorial.gd" id="6_5d4ag"]
 [ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="6_rtw2f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
@@ -327,7 +327,7 @@ offset_right = 531.0
 offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "RED : affected by middle frequency"
+text = "RED : affected by high frequency"
 label_settings = SubResource("LabelSettings_um6dh")
 autowrap_mode = 2
 

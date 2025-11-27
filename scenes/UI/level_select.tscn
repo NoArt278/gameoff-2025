@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://brjnfy2555cvi"]
 
-[ext_resource type="Script" uid="uid://dkeh8gh4u0l15" path="res://scripts/level_select.gd" id="1_chg43"]
+[ext_resource type="Script" uid="uid://dkeh8gh4u0l15" path="res://scripts/UI/level_select.gd" id="1_chg43"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="2_r77uv"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="2_ty08u"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_7plkq"]
@@ -111,7 +111,7 @@ process_mode = 3
 
 [node name="Player" parent="UnaffectedByVisibility" instance=ExtResource("2_r77uv")]
 process_mode = 3
-position = Vector2(300, 210)
+position = Vector2(300, 337)
 
 [node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_7plkq")]
 
@@ -147,7 +147,7 @@ process_mode = 3
 
 [node name="WaveBlock" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("5_ckc44")]
 process_mode = 3
-position = Vector2(192, 421)
+position = Vector2(192, 544)
 target_position = Vector2(192, 0)
 
 [node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="0"]
@@ -160,7 +160,7 @@ shape = SubResource("RectangleShape2D_wu84c")
 
 [node name="WaveBlock2" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("5_ckc44")]
 process_mode = 3
-position = Vector2(576, 421)
+position = Vector2(576, 544)
 target_position = Vector2(576, 0)
 frequency_effect_range = 1
 
@@ -174,7 +174,7 @@ shape = SubResource("RectangleShape2D_wu84c")
 
 [node name="WaveBlock3" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("5_ckc44")]
 process_mode = 3
-position = Vector2(960, 421)
+position = Vector2(960, 544)
 target_position = Vector2(960, 0)
 frequency_effect_range = 2
 
