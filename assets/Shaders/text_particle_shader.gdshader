@@ -34,7 +34,7 @@ void fragment() {
 
 		vec2 dot_pos = (grid_pos * float(dot_pixel_interval)) + vec2(offset_x, offset_y);
 		float dist = distance(vertex_pos, dot_pos);
-		if (dist > radius) { // dot radius
+		if (dist > radius) {
 			COLOR = vec4(0.0);
 		}
 	}

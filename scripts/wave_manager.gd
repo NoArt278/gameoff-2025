@@ -4,7 +4,9 @@ class_name WaveManager
 
 var effect : AudioEffectRecord
 var spectrum : AudioEffectSpectrumAnalyzerInstance
+var current_bgm_index : int = 0
 @onready var mic_input: AudioStreamPlayer2D = $MicInput
+@onready var bgm: AudioStreamPlayer2D = $BGM
 #var screen_size : Vector2
 #var blocks : Array[Node2D]
 #var is_setup_done : bool = false
@@ -12,6 +14,7 @@ var spectrum : AudioEffectSpectrumAnalyzerInstance
 
 #@export var wave_block_count : int = 32
 @export var block_color_gradient : Gradient
+@export var bgm_list : Array[AudioStream]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +22,8 @@ func _ready() -> void:
 	effect = AudioServer.get_bus_effect(idx, 0)
 	spectrum = AudioServer.get_bus_effect_instance(idx, 1)
 	effect.set_recording_active(true)
+	current_bgm_index = randi_range(0, bgm_list.size() - 1)
+	bgm.stream = bgm_list[current_bgm_index]
 	#screen_size = DisplayServer.window_get_size()
 	
 	#setup_level()
@@ -73,3 +78,13 @@ func get_audio_energy(min_frequency : float, max_frequency : float) -> float :
 		#blocks[i].position.y = lerpf(blocks[i].position.y, curr_height, delta * 
 			#smoothstep(min(curr_height, blocks[i].position.y), max(spawn_height, blocks[i].position.y), max(spawn_height, blocks[i].position.y)))
 		#prev_freq = (i+1) * freq_range
+
+
+func _on_bgm_finished() -> void:
+	var new_index = randi_range(0, bgm_list.size() - 1)
+	while current_bgm_index == new_index :
+		new_index = randi_range(0, bgm_list.size() - 1)
+	current_bgm_index = new_index
+	bgm.stream = bgm_list[current_bgm_index]
+	if Globals.play_bgm :
+		bgm.play()

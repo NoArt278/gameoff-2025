@@ -16,6 +16,7 @@ var mic_sensitivity : float = 15.0
 var min_frequency : float = 200.0
 var max_frequency : float = ABSOLUTE_MAX_FREQUENCY
 var use_microphone : bool = true
+var play_bgm : bool = true
 
 var wave_manager : WaveManager
 
@@ -38,6 +39,13 @@ func toggle_microphone(enabled : bool) -> void:
 	else :
 		wave_manager.mic_input.stop()
 
+func toggle_bgm(enabled : bool) -> void:
+	play_bgm = enabled
+	if play_bgm :
+		wave_manager.bgm.play()
+	else :
+		wave_manager.bgm.stop()
+
 func _exit_tree() -> void:
 	save_data()
 
@@ -51,7 +59,9 @@ func load_data() -> void:
 		min_frequency = conf.get_value("settings", "min_frequency", ABSOLUTE_MIN_FREQUENCY)
 		max_frequency = conf.get_value("settings", "max_frequency", ABSOLUTE_MAX_FREQUENCY)
 		use_microphone = conf.get_value("settings", "use_microphone", true)
+		play_bgm = conf.get_value("settings", "play_bgm", true)
 		toggle_microphone(use_microphone)
+		toggle_bgm(play_bgm)
 		
 		last_finished_level = conf.get_value("level", "last_finished_level", 1)
 	else:
@@ -66,6 +76,7 @@ func save_data() -> void:
 	conf.set_value("settings", "min_frequency", min_frequency)
 	conf.set_value("settings", "max_frequency", max_frequency)
 	conf.set_value("settings", "use_microphone", use_microphone)
+	conf.set_value("settings", "play_bgm", play_bgm)
 	
 	conf.set_value("level", "last_finished_level", last_finished_level)
 	

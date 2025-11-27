@@ -24,13 +24,13 @@ void fragment() {
 	float angle = atan(vertex_pos.y, vertex_pos.x); // Angle in radians
 
     // Apply sine wave to circle radius
-    float wavy_outer_radius = outer_radius + 
+    float wavy_outer_radius = outer_radius +
                         sin(angle * frequency + TIME * move_speed) * amplitude;
-	float wavy_inner_radius = inner_radius + 
+	float wavy_inner_radius = inner_radius +
                         sin(angle * frequency + TIME * move_speed) * amplitude;
 	float outer_circle = pow(vertex_pos.x, 2) + pow(vertex_pos.y, 2) - pow(wavy_outer_radius,2);
 	float inner_circle = pow(vertex_pos.x, 2) + pow(vertex_pos.y, 2) - pow(wavy_inner_radius,2);
-	
+
 	if (outer_circle <= outer_radius && inner_circle >= inner_radius &&
 	 random(vec2(vertex_pos.x + TIME, vertex_pos.y + TIME)) < 0.2) {
 		COLOR = color;

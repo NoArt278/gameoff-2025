@@ -114,9 +114,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -109.5
-offset_top = -109.0
+offset_top = -152.0
 offset_right = 109.5
-offset_bottom = -93.0
+offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 0.001
@@ -147,9 +147,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -109.5
-offset_top = -43.0
+offset_top = -86.0
 offset_right = 109.5
-offset_bottom = -27.0
+offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 0.1
@@ -180,9 +180,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -109.5
-offset_top = 25.0
+offset_top = -18.0
 offset_right = 109.5
-offset_bottom = 41.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 65.41
@@ -212,9 +212,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -109.5
-offset_top = 92.0
+offset_top = 49.0
 offset_right = 109.5
-offset_bottom = 108.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 65.42
@@ -244,9 +244,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
-offset_top = 133.0
+offset_top = 90.0
 offset_right = -81.0
-offset_bottom = 157.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -267,6 +267,38 @@ grow_vertical = 2
 theme = ExtResource("3_6wm04")
 text = "Use Microphone"
 
+[node name="BGMToggle" type="CheckButton" parent="."]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 144.0
+offset_right = -81.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BGMToggle"]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -17.0
+offset_right = 205.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_6wm04")
+text = "Play BGM"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_value_changed"]
@@ -274,3 +306,4 @@ text = "Use Microphone"
 [connection signal="value_changed" from="MinFreqSlider" to="." method="_on_min_freq_slider_value_changed"]
 [connection signal="value_changed" from="MaxFreqSlider" to="." method="_on_max_freq_slider_value_changed"]
 [connection signal="toggled" from="MicToggle" to="." method="_on_mic_toggle_toggled"]
+[connection signal="toggled" from="BGMToggle" to="." method="_on_bgm_toggle_toggled"]

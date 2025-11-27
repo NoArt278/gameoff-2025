@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbobdx6wwq2it"]
+[gd_scene load_steps=8 format=3 uid="uid://dbobdx6wwq2it"]
 
 [ext_resource type="Script" uid="uid://d3cm3ud06ilnl" path="res://scripts/wave_manager.gd" id="1_8fe1o"]
 [ext_resource type="PackedScene" uid="uid://beftgbctm1h5" path="res://scenes/output_audio_stream.tscn" id="2_5np0c"]
+[ext_resource type="AudioStream" uid="uid://sqy3ut2flkba" path="res://assets/Audio/SFX/8bit_action_title_bpm150.mp3" id="2_68qdn"]
+[ext_resource type="AudioStream" uid="uid://gs8msuw5ktwq" path="res://assets/Audio/SFX/space_quest_looped_section.mp3" id="3_k3by3"]
+[ext_resource type="AudioStream" uid="uid://dws76qkkynwqe" path="res://assets/Audio/SFX/trialformer.mp3" id="4_gsp50"]
 
 [sub_resource type="Gradient" id="Gradient_8fe1o"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -12,6 +15,7 @@ colors = PackedColorArray(0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1)
 [node name="WaveManager" type="Node"]
 script = ExtResource("1_8fe1o")
 block_color_gradient = SubResource("Gradient_8fe1o")
+bgm_list = Array[AudioStream]([ExtResource("2_68qdn"), ExtResource("3_k3by3"), ExtResource("4_gsp50")])
 
 [node name="MicInput" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMicrophone_8fe1o")
@@ -19,3 +23,8 @@ autoplay = true
 bus = &"Microphone"
 
 [node name="OutputAudioStream" parent="." instance=ExtResource("2_5np0c")]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
+
+[connection signal="finished" from="BGM" to="." method="_on_bgm_finished"]
