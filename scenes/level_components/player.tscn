@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmku86o88i4pr"]
+[gd_scene load_steps=15 format=3 uid="uid://cmku86o88i4pr"]
 
 [ext_resource type="Script" uid="uid://ys7f084t60e6" path="res://scripts/player.gd" id="1_b1uvh"]
 [ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="2_msjxf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://c5qq4icf300kx" path="res://assets/Shaders/noise_indicator.gdshader" id="4_htyg1"]
 [ext_resource type="Script" uid="uid://d3gbc0xrrshmy" path="res://scripts/AudioAffectedObjects/sound_indicator.gd" id="4_wexua"]
 [ext_resource type="AudioStream" uid="uid://cthf74pjfbg1n" path="res://assets/Audio/SFX/die.wav" id="6_6k4qg"]
+[ext_resource type="AudioStream" uid="uid://bv404eonth886" path="res://assets/Audio/SFX/jump.wav" id="7_wr3ep"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wexua"]
 shader = ExtResource("3_hvwgy")
@@ -81,4 +82,8 @@ texture = SubResource("GradientTexture2D_htyg1")
 
 [node name="DieSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_6k4qg")
+volume_db = 10.0
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_wr3ep")
 volume_db = 10.0

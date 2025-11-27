@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d3cm3ud06ilnl" path="res://scripts/wave_manager.gd" id="1_8fe1o"]
 [ext_resource type="PackedScene" uid="uid://beftgbctm1h5" path="res://scenes/output_audio_stream.tscn" id="2_5np0c"]
-[ext_resource type="AudioStream" uid="uid://sqy3ut2flkba" path="res://assets/Audio/SFX/8bit_action_title_bpm150.mp3" id="2_68qdn"]
-[ext_resource type="AudioStream" uid="uid://gs8msuw5ktwq" path="res://assets/Audio/SFX/space_quest_looped_section.mp3" id="3_k3by3"]
-[ext_resource type="AudioStream" uid="uid://dws76qkkynwqe" path="res://assets/Audio/SFX/trialformer.mp3" id="4_gsp50"]
+[ext_resource type="AudioStream" uid="uid://sqy3ut2flkba" path="res://assets/Audio/BGM/8bit_action_title_bpm150.mp3" id="2_68qdn"]
+[ext_resource type="AudioStream" uid="uid://gs8msuw5ktwq" path="res://assets/Audio/BGM/space_quest_looped_section.mp3" id="3_k3by3"]
+[ext_resource type="AudioStream" uid="uid://dws76qkkynwqe" path="res://assets/Audio/BGM/trialformer.mp3" id="4_gsp50"]
 
 [sub_resource type="Gradient" id="Gradient_8fe1o"]
 offsets = PackedFloat32Array(0, 0.5, 1)

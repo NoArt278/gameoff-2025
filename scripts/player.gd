@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -400.0
 @onready var particles_sprite: Sprite2D = $ParticlesSprite
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var die_sound: AudioStreamPlayer2D = $DieSound
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 var can_move: bool = true
 
 signal died
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
