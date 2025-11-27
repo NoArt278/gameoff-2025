@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ddeqqa15qm1ok"]
+[gd_scene load_steps=26 format=3 uid="uid://ddeqqa15qm1ok"]
 
 [ext_resource type="Script" uid="uid://c5xqd16sqfnkb" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="3_jk1qb"]
@@ -6,12 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="3_wu84c"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="4_8ln24"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://bbm7d48uc35sf" path="res://scripts/tutorial.gd" id="6_5d4ag"]
 [ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="6_rtw2f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 48
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bm8t2"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_5d4ag"]
+font_size = 25
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mf7fl"]
+font_size = 25
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_um6dh"]
+font_size = 25
+font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wu84c"]
 
@@ -133,6 +149,36 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_oa1go")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "Start"
 
+[node name="HowtoPlayButton" type="Button" parent="."]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = 31.0
+offset_right = 71.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_tbmy8")
+theme_override_colors/font_pressed_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_hover_color = Color(0.5890956, 0.5890956, 0.5890956, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
+text = "How to Play"
+
 [node name="SettingsButton" type="Button" parent="."]
 material = ExtResource("3_jk1qb")
 layout_mode = 1
@@ -141,10 +187,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = 31.0
-offset_right = 23.0
-offset_bottom = 62.0
+offset_left = -48.5
+offset_top = 80.0
+offset_right = 48.5
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_tbmy8")
@@ -172,6 +218,167 @@ position = Vector2(300, 210)
 
 [node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_wu84c")]
 
+[node name="Tutorial" type="Control" parent="UnaffectedByVisibility" node_paths=PackedStringArray("prev_screen")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_5d4ag")
+prev_screen = NodePath("../..")
+
+[node name="Panel" type="Panel" parent="UnaffectedByVisibility/Tutorial"]
+modulate = Color(0, 0, 0, 0.6901961)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UnaffectedByVisibility/Tutorial"]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = -293.0
+offset_right = 138.5
+offset_bottom = -226.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "How to Play"
+label_settings = SubResource("LabelSettings_vue75")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls" type="Label" parent="UnaffectedByVisibility/Tutorial"]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -461.0
+offset_top = -145.0
+offset_right = -4.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "- WASD to Move
+- Space to Jump
+- Use your microphone or press key 0-9 to produce sound to control objects"
+label_settings = SubResource("LabelSettings_bm8t2")
+autowrap_mode = 2
+
+[node name="Green" type="Label" parent="UnaffectedByVisibility/Tutorial"]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = -154.0
+offset_right = 476.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GREEN : affected by low frequency"
+label_settings = SubResource("LabelSettings_5d4ag")
+autowrap_mode = 2
+
+[node name="Yellow" type="Label" parent="UnaffectedByVisibility/Tutorial"]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = -117.0
+offset_right = 531.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YELLOW : affected by middle frequency"
+label_settings = SubResource("LabelSettings_mf7fl")
+autowrap_mode = 2
+
+[node name="Red" type="Label" parent="UnaffectedByVisibility/Tutorial"]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = -78.0
+offset_right = 531.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RED : affected by middle frequency"
+label_settings = SubResource("LabelSettings_um6dh")
+autowrap_mode = 2
+
+[node name="Controls2" type="Label" parent="UnaffectedByVisibility/Tutorial"]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 53.0
+offset_top = -34.0
+offset_right = 510.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Open Settings to adjust frequency range"
+label_settings = SubResource("LabelSettings_bm8t2")
+autowrap_mode = 2
+
+[node name="CloseButton" type="Button" parent="UnaffectedByVisibility/Tutorial"]
+material = ExtResource("3_jk1qb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = 150.0
+offset_right = 48.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_tbmy8")
+theme_override_colors/font_pressed_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_hover_color = Color(0.5890956, 0.5890956, 0.5890956, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_oa1go")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
+text = "Close Tutorial"
+
 [node name="Walls" type="Node" parent="UnaffectedByVisibility"]
 process_mode = 3
 
@@ -198,7 +405,7 @@ process_mode = 3
 
 [node name="WaveBlock" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("4_8ln24")]
 process_mode = 3
-position = Vector2(192, 421)
+position = Vector2(193, 544)
 target_position = Vector2(192, 0)
 
 [node name="ParticlesSprite" parent="UnaffectedByVisibility/WaveBlocks/WaveBlock" index="0"]
@@ -211,7 +418,7 @@ shape = SubResource("RectangleShape2D_wu84c")
 
 [node name="WaveBlock2" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("4_8ln24")]
 process_mode = 3
-position = Vector2(576, 421)
+position = Vector2(577, 544)
 target_position = Vector2(576, 0)
 frequency_effect_range = 1
 
@@ -225,7 +432,7 @@ shape = SubResource("RectangleShape2D_wu84c")
 
 [node name="WaveBlock3" parent="UnaffectedByVisibility/WaveBlocks" instance=ExtResource("4_8ln24")]
 process_mode = 3
-position = Vector2(960, 421)
+position = Vector2(961, 544)
 target_position = Vector2(960, 0)
 frequency_effect_range = 2
 
@@ -238,7 +445,9 @@ position = Vector2(0, 362)
 shape = SubResource("RectangleShape2D_wu84c")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HowtoPlayButton" to="." method="_on_howto_play_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="UnaffectedByVisibility/Tutorial/CloseButton" to="UnaffectedByVisibility/Tutorial" method="close_tutorial"]
 
 [editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock"]
 [editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock2"]
