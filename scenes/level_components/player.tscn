@@ -75,3 +75,5 @@ script = ExtResource("4_wexua")
 visible = false
 material = SubResource("ShaderMaterial_wexua")
 position = Vector2(-7.152556e-07, 2.6524067e-06)
+scale = Vector2(1.3999999, 0.20253167)
+texture = SubResource("GradientTexture2D_htyg1")
