@@ -11,7 +11,6 @@ class_name Setting
 
 var spectrum : AudioEffectSpectrumAnalyzerInstance
 var prev_screen : Control = null
-var calibrate_with_mic : bool = false
 
 func open_settings(prev : Control) -> void:
 	get_tree().paused = true
