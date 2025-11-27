@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -400.0
 @onready var destroy_particles: CPUParticles2D = $DestroyParticles
 @onready var particles_sprite: Sprite2D = $ParticlesSprite
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var die_sound: AudioStreamPlayer2D = $DieSound
 var can_move: bool = true
 
 signal died
@@ -34,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die() -> void:
+	die_sound.play()
 	can_move = false
 	collision_shape_2d.disabled = true
 	collision_layer = 2
