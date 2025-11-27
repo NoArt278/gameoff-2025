@@ -5,6 +5,7 @@ class_name BgmMirror
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	stream = Globals.wave_manager.bgm.stream
+	volume_db = -20.0
 	if Globals.wave_manager.bgm.playing :
 		play()
 
