@@ -90,10 +90,12 @@ func _on_bgm_toggle_toggled(toggled_on: bool) -> void:
 
 func _on_min_freq_slider_drag_ended(_value_changed: bool) -> void:
 	Input.action_press("low_sound")
+	Input.action_release("low_sound")
 
 
 func _on_max_freq_slider_drag_ended(_value_changed: bool) -> void:
 	Input.action_press("high_sound")
+	Input.action_release("high_sound")
 
 
 func save_settings(_val : bool) -> void:

@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 				curr_audio_range += i
 			active_key_press_count += 1
 	if Input.is_action_just_pressed("low_sound") :
-		curr_audio_range += 1
+		curr_audio_range += 0
 		active_key_press_count += 1
 	if Input.is_action_just_pressed("medium_sound") :
 		curr_audio_range += 5
