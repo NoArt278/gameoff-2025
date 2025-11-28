@@ -22,7 +22,6 @@ func open_settings(prev : Control) -> void:
 
 
 func close_settings() -> void:
-	Globals.save_data()
 	get_tree().paused = false
 	visible = false
 	if prev_screen != null :
@@ -56,6 +55,7 @@ func _on_mic_sensitivity_slider_value_changed(value: float) -> void:
 
 func _on_min_freq_slider_value_changed(value: float) -> void:
 	Globals.min_frequency = value
+	Input.action_press("low_sound")
 
 
 func _on_max_freq_slider_value_changed(value: float) -> void:
@@ -79,3 +79,14 @@ func _on_mic_toggle_toggled(toggled_on: bool) -> void:
 func _on_bgm_toggle_toggled(toggled_on: bool) -> void:
 	if not(is_setting_up) :
 		Globals.toggle_bgm(toggled_on)
+
+
+func _on_min_freq_slider_drag_ended(_value_changed: bool) -> void:
+	Input.action_press("low_sound")
+
+
+func _on_max_freq_slider_drag_ended(_value_changed: bool) -> void:
+	Input.action_press("high_sound")
+
+func save_settings(_val : bool) -> void:
+	Globals.save_data()
