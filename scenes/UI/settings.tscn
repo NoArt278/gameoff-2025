@@ -215,7 +215,7 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 65.41
-max_value = 2092.0
+max_value = 4185.0
 value = 65.41
 
 [node name="Label" type="Label" parent="MinFreqSlider"]
@@ -261,8 +261,8 @@ offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 min_value = 65.42
-max_value = 2093.0
-value = 2093.0
+max_value = 4186.01
+value = 2093.42
 
 [node name="Label" type="Label" parent="MaxFreqSlider"]
 material = ExtResource("2_r6d6q")

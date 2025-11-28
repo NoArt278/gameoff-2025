@@ -1,6 +1,6 @@
 extends Node
 
-const ABSOLUTE_MAX_FREQUENCY : float = 2093.0
+const ABSOLUTE_MAX_FREQUENCY : float = 4186.01
 const ABSOLUTE_MIN_FREQUENCY : float = 65.41
 const MIN_DB : float = 60.0
 const WAVE_MANAGER = preload("uid://dbobdx6wwq2it")
