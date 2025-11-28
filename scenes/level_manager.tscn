@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://be0oalagyckgu"]
+[gd_scene load_steps=9 format=3 uid="uid://be0oalagyckgu"]
 
 [ext_resource type="Script" uid="uid://cguhewo7s6mjl" path="res://scripts/level_manager.gd" id="1_5eglo"]
 [ext_resource type="PackedScene" uid="uid://c25o74dpnjm61" path="res://scenes/levels/level_1.tscn" id="2_lbe5n"]
@@ -7,7 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dx2qpmoe3aqog" path="res://scenes/levels/level_4.tscn" id="5_6dptc"]
 [ext_resource type="PackedScene" uid="uid://isqut0xnwr3y" path="res://scenes/levels/finish_screen.tscn" id="6_kq0y1"]
 [ext_resource type="PackedScene" uid="uid://rhvnoq37d8be" path="res://scenes/levels/level_5.tscn" id="7_6dptc"]
+[ext_resource type="AudioStream" uid="uid://cvllu54be4ih0" path="res://assets/Audio/SFX/finish.wav" id="8_kq0y1"]
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_5eglo")
 all_levels = Array[Resource]([ExtResource("2_lbe5n"), ExtResource("3_lbe5n"), ExtResource("4_dpnu2"), ExtResource("5_6dptc"), ExtResource("7_6dptc"), ExtResource("6_kq0y1")])
+
+[node name="FinishSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_kq0y1")
+volume_db = 10.0

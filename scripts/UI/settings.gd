@@ -9,6 +9,10 @@ class_name Setting
 @onready var max_freq_slider: HSlider = $MaxFreqSlider
 @onready var mic_toggle: CheckButton = $MicToggle
 @onready var bgm_toggle: CheckButton = $BGMToggle
+@onready var volume_number: Label = $VolumeSlider/VolumeNumber
+@onready var mic_sensitivity_number: Label = $MicSensitivitySlider/MicSensitivityNumber
+@onready var min_frequency_number: Label = $MinFreqSlider/MinFrequencyNumber
+@onready var max_frequency_number: Label = $MaxFreqSlider/MaxFrequencyNumber
 
 var spectrum : AudioEffectSpectrumAnalyzerInstance
 var prev_screen : Control = null
@@ -47,19 +51,22 @@ func _ready() -> void:
 func _on_volume_slider_value_changed(value: float) -> void:
 	Globals.volume = value
 	AudioServer.set_bus_volume_linear(0, value)
+	volume_number.text = str(floori(value * 100))
 
 
 func _on_mic_sensitivity_slider_value_changed(value: float) -> void:
 	Globals.mic_sensitivity = value
+	mic_sensitivity_number.text = str(value)
 
 
 func _on_min_freq_slider_value_changed(value: float) -> void:
 	Globals.min_frequency = value
-	Input.action_press("low_sound")
+	min_frequency_number.text = str(value) + " Hz"
 
 
 func _on_max_freq_slider_value_changed(value: float) -> void:
 	Globals.max_frequency = value
+	max_frequency_number.text = str(value) + " Hz"
 
 
 func _on_back_button_pressed() -> void:
@@ -87,6 +94,7 @@ func _on_min_freq_slider_drag_ended(_value_changed: bool) -> void:
 
 func _on_max_freq_slider_drag_ended(_value_changed: bool) -> void:
 	Input.action_press("high_sound")
+
 
 func save_settings(_val : bool) -> void:
 	Globals.save_data()

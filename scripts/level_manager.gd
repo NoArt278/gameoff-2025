@@ -4,6 +4,7 @@ extends Node
 var current_level_scene : Node2D
 var current_goal : Goal
 var current_player : Player
+@onready var finish_sound: AudioStreamPlayer2D = $FinishSound
 
 func _ready() -> void:
 	load_level(Globals.current_level)
@@ -29,6 +30,7 @@ func load_level(level : int) -> void :
 			Globals.last_finished_level = level
 
 func advance_level() -> void :
+	finish_sound.play()
 	load_level(Globals.current_level + 1)
 
 func retry_level() -> void:

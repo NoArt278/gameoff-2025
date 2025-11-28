@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Goal
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 signal level_cleared
 
 func _on_body_entered(body: Node2D) -> void:

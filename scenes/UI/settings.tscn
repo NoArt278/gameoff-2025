@@ -139,6 +139,20 @@ grow_horizontal = 2
 theme = ExtResource("3_6wm04")
 text = "Volume"
 
+[node name="VolumeNumber" type="Label" parent="VolumeSlider"]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 158.0
+offset_top = -5.0
+offset_right = 438.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme = ExtResource("3_6wm04")
+text = "0 Hz"
+
 [node name="MicSensitivitySlider" type="HSlider" parent="."]
 material = ExtResource("2_r6d6q")
 layout_mode = 1
@@ -172,6 +186,20 @@ grow_horizontal = 2
 theme = ExtResource("3_6wm04")
 text = "Sound Sensitivity"
 
+[node name="MicSensitivityNumber" type="Label" parent="MicSensitivitySlider"]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 158.0
+offset_top = -5.0
+offset_right = 438.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme = ExtResource("3_6wm04")
+text = "0 Hz"
+
 [node name="MinFreqSlider" type="HSlider" parent="."]
 material = ExtResource("2_r6d6q")
 layout_mode = 1
@@ -204,6 +232,20 @@ grow_horizontal = 2
 theme = ExtResource("3_6wm04")
 text = "Minimum Frequency"
 
+[node name="MinFrequencyNumber" type="Label" parent="MinFreqSlider"]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 158.0
+offset_top = -5.0
+offset_right = 438.0
+offset_bottom = 18.0
+grow_horizontal = 2
+theme = ExtResource("3_6wm04")
+text = "0 Hz"
+
 [node name="MaxFreqSlider" type="HSlider" parent="."]
 material = ExtResource("2_r6d6q")
 layout_mode = 1
@@ -235,6 +277,20 @@ offset_bottom = -3.0
 grow_horizontal = 2
 theme = ExtResource("3_6wm04")
 text = "Maximum Frequency"
+
+[node name="MaxFrequencyNumber" type="Label" parent="MaxFreqSlider"]
+material = ExtResource("2_r6d6q")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 158.0
+offset_top = -2.0
+offset_right = 438.0
+offset_bottom = 21.0
+grow_horizontal = 2
+theme = ExtResource("3_6wm04")
+text = "0 Hz"
 
 [node name="MicToggle" type="CheckButton" parent="."]
 material = ExtResource("2_r6d6q")

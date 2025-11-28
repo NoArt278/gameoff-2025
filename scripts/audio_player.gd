@@ -30,6 +30,16 @@ func _process(_delta: float) -> void:
 			else :
 				curr_audio_range += i
 			active_key_press_count += 1
+	if Input.is_action_just_pressed("low_sound") :
+		curr_audio_range += 1
+		active_key_press_count += 1
+	if Input.is_action_just_pressed("medium_sound") :
+		curr_audio_range += 5
+		active_key_press_count += 1
+	if Input.is_action_just_pressed("high_sound") :
+		curr_audio_range += 10
+		active_key_press_count += 1
+	
 	if active_key_press_count > 0 :
 		curr_audio_range /= active_key_press_count
 		fill_buffer(curr_audio_range / 10)
