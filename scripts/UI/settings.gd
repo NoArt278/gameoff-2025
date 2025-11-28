@@ -22,6 +22,7 @@ func open_settings(prev : Control) -> void:
 
 
 func close_settings() -> void:
+	Globals.save_data()
 	get_tree().paused = false
 	visible = false
 	if prev_screen != null :

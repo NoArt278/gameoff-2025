@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_7plkq"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="5_ckc44"]
 [ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="6_r77uv"]
-[ext_resource type="Script" uid="uid://bdgtbqrv2hvbv" path="res://scripts/bgm_mirror.gd" id="7_mi1ok"]
+[ext_resource type="PackedScene" uid="uid://bp60o5by7ys5e" path="res://scenes/bgm_mirror.tscn" id="7_mi1ok"]
 [ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="8_mi1ok"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
@@ -101,6 +101,7 @@ offset_right = 136.0
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("8_mi1ok")
 text = "Level Select"
 label_settings = SubResource("LabelSettings_vue75")
 horizontal_alignment = 1
@@ -180,9 +181,7 @@ texture = SubResource("GradientTexture2D_o2xx4")
 position = Vector2(0, 362)
 shape = SubResource("RectangleShape2D_wu84c")
 
-[node name="BGMMirror" type="AudioStreamPlayer2D" parent="UnaffectedByVisibility"]
-bus = &"Microphone"
-script = ExtResource("7_mi1ok")
+[node name="BGMMirror" parent="UnaffectedByVisibility" instance=ExtResource("7_mi1ok")]
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -331,7 +330,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_7pml4")
 text = "Settings"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="finished" from="UnaffectedByVisibility/BGMMirror" to="UnaffectedByVisibility/BGMMirror" method="_on_bgm_mirror_finished"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 
 [editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock"]

@@ -20,6 +20,6 @@ func _on_howto_play_button_pressed() -> void:
 
 func _on_visibility_changed() -> void:
 	if bgm_mirror and not(visible) :
-		bgm_mirror.stop()
+		bgm_mirror.stop_manually()
 	elif bgm_mirror :
 		bgm_mirror.reset_play()

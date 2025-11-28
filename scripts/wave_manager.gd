@@ -24,6 +24,8 @@ func _ready() -> void:
 	effect.set_recording_active(true)
 	current_bgm_index = randi_range(0, bgm_list.size() - 1)
 	bgm.stream = bgm_list[current_bgm_index]
+	if Globals.play_bgm :
+		bgm.play()
 	#screen_size = DisplayServer.window_get_size()
 	
 	#setup_level()

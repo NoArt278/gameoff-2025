@@ -20,6 +20,8 @@ var play_bgm : bool = true
 
 var wave_manager : WaveManager
 
+signal play_bgm_changed
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	wave_manager = WAVE_MANAGER.instantiate()
@@ -45,9 +47,7 @@ func toggle_bgm(enabled : bool) -> void:
 		wave_manager.bgm.play()
 	else :
 		wave_manager.bgm.stop()
-
-func _exit_tree() -> void:
-	save_data()
+	play_bgm_changed.emit(play_bgm)
 
 func load_data() -> void:
 	var conf := ConfigFile.new()

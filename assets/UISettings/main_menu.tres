@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://02jl3acnqg0j"]
 
-[sub_resource type="SystemFont" id="SystemFont_oa1go"]
+[ext_resource type="FontFile" uid="uid://omdupf8o6jf" path="res://assets/Fonts/PixelatedEleganceRegular-ovyAA.ttf" id="1_opfbe"]
 
 [resource]
-default_font = SubResource("SystemFont_oa1go")
-default_font_size = 25
+default_font = ExtResource("1_opfbe")
+default_font_size = 20

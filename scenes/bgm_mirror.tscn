@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp60o5by7ys5e"]
+
+[ext_resource type="Script" uid="uid://bdgtbqrv2hvbv" path="res://scripts/bgm_mirror.gd" id="1_oddt0"]
+
+[node name="BGMMirror" type="AudioStreamPlayer2D"]
+autoplay = true
+bus = &"Microphone"
+script = ExtResource("1_oddt0")
+
+[connection signal="finished" from="." to="." method="_on_bgm_mirror_finished"]

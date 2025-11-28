@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="3_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="3_wu84c"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="4_8ln24"]
-[ext_resource type="Script" uid="uid://bdgtbqrv2hvbv" path="res://scripts/bgm_mirror.gd" id="4_um6dh"]
+[ext_resource type="PackedScene" uid="uid://bp60o5by7ys5e" path="res://scenes/bgm_mirror.tscn" id="4_um6dh"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://bbm7d48uc35sf" path="res://scripts/UI/tutorial.gd" id="6_5d4ag"]
 [ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="6_rtw2f"]
@@ -16,18 +16,18 @@ font_size = 48
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa1go"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bm8t2"]
-font_size = 25
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_5d4ag"]
-font_size = 25
+font_size = 20
 font_color = Color(0, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mf7fl"]
-font_size = 25
+font_size = 20
 font_color = Color(1, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_um6dh"]
-font_size = 25
+font_size = 20
 font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wu84c"]
@@ -115,6 +115,7 @@ offset_right = 106.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_tbmy8")
 text = "Test Title"
 label_settings = SubResource("LabelSettings_vue75")
 horizontal_alignment = 1
@@ -210,9 +211,7 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_oa1go")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "Settings"
 
-[node name="BGMMirror" type="AudioStreamPlayer2D" parent="."]
-bus = &"Microphone"
-script = ExtResource("4_um6dh")
+[node name="BGMMirror" parent="." instance=ExtResource("4_um6dh")]
 
 [node name="UnaffectedByVisibility" type="Node" parent="."]
 process_mode = 3
@@ -231,6 +230,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_tbmy8")
 script = ExtResource("6_5d4ag")
 prev_screen = NodePath("../..")
 
@@ -278,7 +278,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "- WASD to Move
 - Space to Jump
-- Use your microphone or press key 0-9 to produce sound to control objects"
+- Use your microphone or press 0-9 to produce sound to control objects"
 label_settings = SubResource("LabelSettings_bm8t2")
 autowrap_mode = 2
 
@@ -291,12 +291,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 54.0
-offset_top = -154.0
+offset_top = -147.0
 offset_right = 476.0
-offset_bottom = -114.0
+offset_bottom = -106.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "GREEN : affected by low frequency"
+text = "GREEN : affected by LOW frequency"
 label_settings = SubResource("LabelSettings_5d4ag")
 autowrap_mode = 2
 
@@ -309,12 +309,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 54.0
-offset_top = -117.0
+offset_top = -98.5
 offset_right = 531.0
-offset_bottom = -44.0
+offset_bottom = -53.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "YELLOW : affected by middle frequency"
+text = "YELLOW : affected by MIDDLE frequency"
 label_settings = SubResource("LabelSettings_mf7fl")
 autowrap_mode = 2
 
@@ -327,12 +327,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 54.0
-offset_top = -78.0
+offset_top = -49.0
 offset_right = 531.0
-offset_bottom = -38.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "RED : affected by high frequency"
+text = "RED : affected by HIGH frequency"
 label_settings = SubResource("LabelSettings_um6dh")
 autowrap_mode = 2
 
@@ -345,9 +345,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 53.0
-offset_top = -34.0
+offset_top = -22.0
 offset_right = 510.0
-offset_bottom = 43.0
+offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Open Settings to adjust frequency range"
@@ -453,7 +453,6 @@ shape = SubResource("RectangleShape2D_wu84c")
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="HowtoPlayButton" to="." method="_on_howto_play_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="finished" from="BGMMirror" to="BGMMirror" method="_on_bgm_mirror_finished"]
 [connection signal="pressed" from="UnaffectedByVisibility/Tutorial/CloseButton" to="UnaffectedByVisibility/Tutorial" method="close_tutorial"]
 
 [editable path="UnaffectedByVisibility/WaveBlocks/WaveBlock"]
