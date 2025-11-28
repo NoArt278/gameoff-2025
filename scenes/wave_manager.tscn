@@ -27,4 +27,8 @@ bus = &"Microphone"
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 volume_db = 10.0
 
+[node name="BGMMirror" type="AudioStreamPlayer2D" parent="."]
+volume_db = -20.0
+bus = &"Microphone"
+
 [connection signal="finished" from="BGM" to="." method="_on_bgm_finished"]

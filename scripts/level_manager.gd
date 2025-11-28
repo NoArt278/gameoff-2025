@@ -16,6 +16,10 @@ func load_level(level : int) -> void :
 		current_level_scene.queue_free()
 	
 	if level <= all_levels.size() :
+		if level == all_levels.size() :
+			Globals.wave_manager.set_bgm_mirror_play(true)
+		else :
+			Globals.wave_manager.set_bgm_mirror_play(false)
 		Globals.current_level = level
 		current_level_scene = all_levels[level-1].instantiate()
 		call_deferred("add_child", current_level_scene)

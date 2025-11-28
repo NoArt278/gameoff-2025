@@ -5,8 +5,10 @@ class_name WaveManager
 var effect : AudioEffectRecord
 var spectrum : AudioEffectSpectrumAnalyzerInstance
 var current_bgm_index : int = 0
+var play_bgm_mirror : bool = true
 @onready var mic_input: AudioStreamPlayer2D = $MicInput
 @onready var bgm: AudioStreamPlayer2D = $BGM
+@onready var bgm_mirror: AudioStreamPlayer2D = $BGMMirror
 #var screen_size : Vector2
 #var blocks : Array[Node2D]
 #var is_setup_done : bool = false
@@ -24,8 +26,10 @@ func _ready() -> void:
 	effect.set_recording_active(true)
 	current_bgm_index = randi_range(0, bgm_list.size() - 1)
 	bgm.stream = bgm_list[current_bgm_index]
+	bgm_mirror.stream = bgm_list[current_bgm_index]
 	if Globals.play_bgm :
 		bgm.play()
+		bgm_mirror.play()
 	#screen_size = DisplayServer.window_get_size()
 	
 	#setup_level()
@@ -33,6 +37,22 @@ func _ready() -> void:
 func get_audio_energy(min_frequency : float, max_frequency : float) -> float :
 	var curr_magnitude : float = spectrum.get_magnitude_for_frequency_range(min_frequency, max_frequency).length()
 	return clampf((Globals.MIN_DB + linear_to_db(curr_magnitude)) / Globals.MIN_DB, 0, 1) * Globals.mic_sensitivity
+
+func set_bgm_play(enabled : bool) :
+	if enabled :
+		bgm.play()
+		if play_bgm_mirror :
+			bgm_mirror.play()
+	else :
+		bgm.stop()
+		bgm_mirror.stop()
+
+func set_bgm_mirror_play(enabled : bool) :
+	play_bgm_mirror = enabled
+	if enabled and Globals.play_bgm :
+		bgm_mirror.play()
+	else :
+		bgm_mirror.stop()
 
 #func setup_level() -> void:
 	#is_setup_done = false
@@ -88,5 +108,8 @@ func _on_bgm_finished() -> void:
 		new_index = randi_range(0, bgm_list.size() - 1)
 	current_bgm_index = new_index
 	bgm.stream = bgm_list[current_bgm_index]
+	bgm_mirror.stream = bgm_list[current_bgm_index]
 	if Globals.play_bgm :
 		bgm.play()
+		if play_bgm_mirror :
+			bgm_mirror.play()

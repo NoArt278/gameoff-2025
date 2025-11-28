@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://isqut0xnwr3y"]
+[gd_scene load_steps=39 format=3 uid="uid://isqut0xnwr3y"]
 
 [ext_resource type="Script" uid="uid://b85aeuhx60iy0" path="res://scripts/UI/finish_screen.gd" id="1_xleaw"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="2_groyn"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="4_aj5v1"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="5_tjvmu"]
 [ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="6_4xvoi"]
-[ext_resource type="PackedScene" uid="uid://bp60o5by7ys5e" path="res://scenes/bgm_mirror.tscn" id="7_fb7dl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ksju7"]
 normal = Vector2(1, 0)
@@ -492,8 +491,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_d2rwm")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_d2rwm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d2rwm")
 text = "Back To Main Menu"
-
-[node name="BGMMirror" parent="." instance=ExtResource("7_fb7dl")]
 
 [connection signal="pressed" from="Control/Return To Main" to="." method="_on_return_to_main_pressed"]
 

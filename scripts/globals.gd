@@ -20,8 +20,6 @@ var play_bgm : bool = true
 
 var wave_manager : WaveManager
 
-signal play_bgm_changed
-
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	wave_manager = WAVE_MANAGER.instantiate()
@@ -43,11 +41,7 @@ func toggle_microphone(enabled : bool) -> void:
 
 func toggle_bgm(enabled : bool) -> void:
 	play_bgm = enabled
-	if play_bgm :
-		wave_manager.bgm.play()
-	else :
-		wave_manager.bgm.stop()
-	play_bgm_changed.emit(play_bgm)
+	wave_manager.set_bgm_play(enabled)
 
 func load_data() -> void:
 	var conf := ConfigFile.new()
