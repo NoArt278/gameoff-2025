@@ -48,7 +48,7 @@ func load_data() -> void:
 
 	var error := conf.load(SAVE_PATH)
 	if error == OK:
-		volume = conf.get_value("settings", "volume", 0.7)
+		volume = conf.get_value("settings", "volume", 0.5)
 		mic_sensitivity = conf.get_value("settings", "mic_sensitivity", 10)
 		min_frequency = conf.get_value("settings", "min_frequency", ABSOLUTE_MIN_FREQUENCY)
 		max_frequency = conf.get_value("settings", "max_frequency", ABSOLUTE_MAX_FREQUENCY)
