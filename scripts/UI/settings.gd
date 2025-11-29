@@ -51,7 +51,6 @@ func _ready() -> void:
 func _on_volume_slider_value_changed(value: float) -> void:
 	Globals.volume = value
 	AudioServer.set_bus_volume_linear(0, value)
-	Globals.wave_manager.bgm_mirror.volume_linear = max(value - 0.2, 0.1)
 	volume_number.text = str(floori(value * 100))
 
 

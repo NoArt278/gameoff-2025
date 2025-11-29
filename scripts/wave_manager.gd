@@ -27,7 +27,6 @@ func _ready() -> void:
 	current_bgm_index = randi_range(0, bgm_list.size() - 1)
 	bgm.stream = bgm_list[current_bgm_index]
 	bgm_mirror.stream = bgm_list[current_bgm_index]
-	bgm_mirror.volume_db = AudioServer.get_bus_volume_db(0)
 	if Globals.play_bgm :
 		bgm.play()
 		bgm_mirror.play()
