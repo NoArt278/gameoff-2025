@@ -21,13 +21,13 @@ void fragment() {
 	float seed = random(vertex_pos);
 
 	float t = TIME * move_speed;
-	float angle = atan(vertex_pos.y, vertex_pos.x); // Angle in radians
+	float angle = atan(vertex_pos.y, vertex_pos.x);
+	float sine_value = sin(angle * round(frequency) + TIME * move_speed) * amplitude;
 
     // Apply sine wave to circle radius
-    float wavy_outer_radius = outer_radius +
-                        sin(angle * frequency + TIME * move_speed) * amplitude;
-	float wavy_inner_radius = inner_radius +
-                        sin(angle * frequency + TIME * move_speed) * amplitude;
+    float wavy_outer_radius = outer_radius + sine_value;
+	float wavy_inner_radius = inner_radius + sine_value;
+						
 	float outer_circle = pow(vertex_pos.x, 2) + pow(vertex_pos.y, 2) - pow(wavy_outer_radius,2);
 	float inner_circle = pow(vertex_pos.x, 2) + pow(vertex_pos.y, 2) - pow(wavy_inner_radius,2);
 
