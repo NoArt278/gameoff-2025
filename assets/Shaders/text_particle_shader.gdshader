@@ -3,7 +3,7 @@ render_mode world_vertex_coords;
 
 uniform int pixel_interval = 1;
 uniform float move_speed = 1.0;
-uniform float radius = 0.5;
+uniform float radius = 1.5;
 uniform float amplitude = 0.2;
 
 varying vec2 vertex_pos;

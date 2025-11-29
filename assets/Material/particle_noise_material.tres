@@ -5,6 +5,7 @@
 [resource]
 shader = ExtResource("1_jpn2j")
 shader_parameter/color = Color(0.383879, 0.61032355, 0.9994802, 1)
+shader_parameter/pixel_interval = 0
 shader_parameter/move_speed = 3.0
-shader_parameter/radius = 0.3
+shader_parameter/radius = 0.5
 shader_parameter/amplitude = 5.0

@@ -7,6 +7,7 @@ var spawn_position : Vector2
 var base_amplitude : float = 5.0
 var base_move_speed : float = 3.0
 var base_pixel_interval : int = 5
+var base_radius : float = 0.4
 
 func _ready() -> void:
 	super()
@@ -14,6 +15,7 @@ func _ready() -> void:
 	noise_shader_material.set_shader_parameter("amplitude", base_amplitude)
 	noise_shader_material.set_shader_parameter("move_speed", base_move_speed)
 	noise_shader_material.set_shader_parameter("pixel_interval", base_pixel_interval)
+	noise_shader_material.set_shader_parameter("radius", base_radius)
 	recolor_particles()
 
 func audio_effect(delta : float = 1) -> void:

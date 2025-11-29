@@ -43,7 +43,7 @@ shader = ExtResource("6_rtw2f")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/pixel_interval = 0
 shader_parameter/move_speed = 3.0
-shader_parameter/radius = 0.3
+shader_parameter/radius = 0.4
 shader_parameter/amplitude = 1.0
 
 [sub_resource type="Gradient" id="Gradient_8jpgc"]
@@ -64,7 +64,7 @@ shader = ExtResource("6_rtw2f")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/pixel_interval = 0
 shader_parameter/move_speed = 3.0
-shader_parameter/radius = 0.3
+shader_parameter/radius = 0.4
 shader_parameter/amplitude = 1.0
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_oa1go"]
@@ -80,7 +80,7 @@ shader = ExtResource("6_rtw2f")
 shader_parameter/color = Color(1, 0, 0, 1)
 shader_parameter/pixel_interval = 0
 shader_parameter/move_speed = 3.0
-shader_parameter/radius = 0.3
+shader_parameter/radius = 0.4
 shader_parameter/amplitude = 1.0
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5dd4i"]
