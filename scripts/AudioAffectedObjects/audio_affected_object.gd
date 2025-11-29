@@ -16,7 +16,11 @@ func _ready() -> void:
 @abstract func audio_effect(delta : float = 1) -> void
 
 func recolor_particles() -> void:
+	if not(particle_sprite) :
+		return
+	
 	var shader_material : ShaderMaterial = particle_sprite.material.duplicate_deep()
 	current_color = Globals.wave_manager.block_color_gradient.get_color(frequency_effect_range)
 	shader_material.set_shader_parameter("color", current_color)
 	particle_sprite.material = shader_material
+	noise_shader_material = shader_material
