@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cmku86o88i4pr"]
+[gd_scene load_steps=16 format=3 uid="uid://cmku86o88i4pr"]
 
 [ext_resource type="Script" uid="uid://ys7f084t60e6" path="res://scripts/player.gd" id="1_b1uvh"]
 [ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="2_msjxf"]
@@ -43,6 +43,13 @@ shader_parameter/frequency = 20.0
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6k4qg"]
 gradient = SubResource("Gradient_htyg1")
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wr3ep"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_b1uvh")
 
@@ -78,7 +85,7 @@ visible = false
 material = SubResource("ShaderMaterial_wexua")
 position = Vector2(-7.152556e-07, 2.6524067e-06)
 scale = Vector2(1.3999999, 0.20253167)
-texture = SubResource("GradientTexture2D_htyg1")
+texture = SubResource("GradientTexture2D_wr3ep")
 
 [node name="DieSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_6k4qg")

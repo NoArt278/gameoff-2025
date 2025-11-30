@@ -1,0 +1,519 @@
+[gd_scene load_steps=45 format=3 uid="uid://bko03c0bhbp80"]
+
+[ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="1_t0w7d"]
+[ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="2_paav1"]
+[ext_resource type="Shader" uid="uid://jqu54wdyeaa0" path="res://assets/Shaders/noise_indicator_multicolor.gdshader" id="3_pw3mb"]
+[ext_resource type="Script" uid="uid://d3gbc0xrrshmy" path="res://scripts/AudioAffectedObjects/sound_indicator.gd" id="4_uind8"]
+[ext_resource type="PackedScene" uid="uid://b86nx5l1h8hjd" path="res://scenes/level_components/particles_sprite.tscn" id="5_pw3mb"]
+[ext_resource type="Shader" uid="uid://g7rhwawfuv3k" path="res://assets/Shaders/local_particle_noise.gdshader" id="6_52dqq"]
+[ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="7_pw3mb"]
+[ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="8_52dqq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akuhd"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="Gradient" id="Gradient_8jpgc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_837jk"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5rvx"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uind8"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pw3mb"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_52dqq"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxq7q"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ui8uk"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ewa8o"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_unvqk"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_av44q"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ij1t6"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icioa"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ff6lj"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_expsg"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7cq7w"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eioxn"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8o1vl"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ia8p"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6e72"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08bw3"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xnh4d"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1upf"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kfvjl"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yp3eu"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jnblr"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xl3km"]
+resource_local_to_scene = true
+shader = ExtResource("2_paav1")
+shader_parameter/color = Color(1, 0, 0, 1)
+shader_parameter/pixel_interval = 0
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.3
+shader_parameter/amplitude = 10.0
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rlbgx"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_8jpgc")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ui8uk"]
+shader = ExtResource("3_pw3mb")
+shader_parameter/color = Color(0.12156863, 1, 0.07058824, 1)
+shader_parameter/color_2 = Color(1, 1, 0, 1)
+shader_parameter/color_3 = Color(1, 0, 0, 1)
+shader_parameter/move_speed = 3.0
+shader_parameter/outer_radius = 26.0
+shader_parameter/inner_radius = 25.0
+shader_parameter/amplitude = 0.5
+shader_parameter/frequency = 35.0
+
+[sub_resource type="Gradient" id="Gradient_htyg1"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ewa8o"]
+gradient = SubResource("Gradient_htyg1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_unvqk"]
+shader = ExtResource("6_52dqq")
+shader_parameter/color = Color(0, 1, 0.80784315, 1)
+shader_parameter/pixel_interval = 6
+shader_parameter/move_speed = 3.0
+shader_parameter/radius = 0.6
+shader_parameter/amplitude = 5.0
+
+[sub_resource type="Gradient" id="Gradient_av44q"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_icioa"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_av44q")
+width = 20
+height = 237
+fill_to = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxq7q"]
+font_size = 36
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WaveBlocks" type="Node" parent="."]
+
+[node name="WaveBlock" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(83, 466)
+target_position = Vector2(83, 319)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock" index="0"]
+material = SubResource("ShaderMaterial_akuhd")
+texture = SubResource("GradientTexture2D_837jk")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock2" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(248, 466)
+target_position = Vector2(248, 319)
+frequency_effect_range = 1
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock2" index="0"]
+material = SubResource("ShaderMaterial_v5rvx")
+texture = SubResource("GradientTexture2D_uind8")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock2" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock3" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(413, 466)
+target_position = Vector2(413, 319)
+frequency_effect_range = 2
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock3" index="0"]
+material = SubResource("ShaderMaterial_pw3mb")
+texture = SubResource("GradientTexture2D_52dqq")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock3" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock4" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(578, 466)
+target_position = Vector2(578, 319)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock4" index="0"]
+material = SubResource("ShaderMaterial_gxq7q")
+texture = SubResource("GradientTexture2D_ui8uk")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock4" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock5" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(742, 466)
+target_position = Vector2(742, 319)
+frequency_effect_range = 1
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock5" index="0"]
+material = SubResource("ShaderMaterial_ewa8o")
+texture = SubResource("GradientTexture2D_unvqk")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock5" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock6" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(906, 466)
+target_position = Vector2(906, 319)
+frequency_effect_range = 2
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock6" index="0"]
+material = SubResource("ShaderMaterial_av44q")
+texture = SubResource("GradientTexture2D_ij1t6")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock6" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock7" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(1071, 466)
+target_position = Vector2(1071, 319)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock7" index="0"]
+material = SubResource("ShaderMaterial_icioa")
+texture = SubResource("GradientTexture2D_ff6lj")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock7" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock8" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(84, 124)
+rotation = -3.1415927
+target_position = Vector2(83, 250)
+frequency_effect_range = 1
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock8" index="0"]
+material = SubResource("ShaderMaterial_expsg")
+texture = SubResource("GradientTexture2D_7cq7w")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock8" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock9" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(248, 124)
+rotation = -3.1415927
+target_position = Vector2(248, 250)
+frequency_effect_range = 2
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock9" index="0"]
+material = SubResource("ShaderMaterial_eioxn")
+texture = SubResource("GradientTexture2D_8o1vl")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock9" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock10" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(413, 124)
+rotation = -3.1415927
+target_position = Vector2(413, 250)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock10" index="0"]
+material = SubResource("ShaderMaterial_2ia8p")
+texture = SubResource("GradientTexture2D_w6e72")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock10" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock11" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(578, 124)
+rotation = -3.1415927
+target_position = Vector2(578, 250)
+frequency_effect_range = 1
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock11" index="0"]
+material = SubResource("ShaderMaterial_08bw3")
+texture = SubResource("GradientTexture2D_xnh4d")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock11" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock12" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(742, 124)
+rotation = -3.1415927
+target_position = Vector2(742, 250)
+frequency_effect_range = 2
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock12" index="0"]
+material = SubResource("ShaderMaterial_k1upf")
+texture = SubResource("GradientTexture2D_kfvjl")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock12" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock13" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(906, 124)
+rotation = -3.1415927
+target_position = Vector2(906, 250)
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock13" index="0"]
+material = SubResource("ShaderMaterial_yp3eu")
+texture = SubResource("GradientTexture2D_jnblr")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock13" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="WaveBlock14" parent="WaveBlocks" instance=ExtResource("1_t0w7d")]
+visible = false
+position = Vector2(1071, 124)
+rotation = -3.1415927
+target_position = Vector2(1071, 250)
+frequency_effect_range = 1
+
+[node name="ParticlesSprite" parent="WaveBlocks/WaveBlock14" index="0"]
+material = SubResource("ShaderMaterial_xl3km")
+texture = SubResource("GradientTexture2D_rlbgx")
+
+[node name="CollisionShape2D" parent="WaveBlocks/WaveBlock14" index="1"]
+position = Vector2(0, 170.8125)
+
+[node name="SoundIndicator" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ui8uk")
+position = Vector2(571.00006, 350)
+scale = Vector2(7.967503, 7.967503)
+texture = SubResource("GradientTexture2D_ewa8o")
+script = ExtResource("4_uind8")
+
+[node name="ParticlesSprite" parent="SoundIndicator" instance=ExtResource("5_pw3mb")]
+visible = false
+material = SubResource("ShaderMaterial_unvqk")
+position = Vector2(-7.152556e-07, 2.6524067e-06)
+scale = Vector2(1.3999999, 0.20253167)
+texture = SubResource("GradientTexture2D_icioa")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Control"]
+material = ExtResource("7_pw3mb")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -3.0
+offset_right = 209.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_52dqq")
+text = "Pitchformer"
+label_settings = SubResource("LabelSettings_gxq7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[editable path="WaveBlocks/WaveBlock"]
+[editable path="WaveBlocks/WaveBlock2"]
+[editable path="WaveBlocks/WaveBlock3"]
+[editable path="WaveBlocks/WaveBlock4"]
+[editable path="WaveBlocks/WaveBlock5"]
+[editable path="WaveBlocks/WaveBlock6"]
+[editable path="WaveBlocks/WaveBlock7"]
+[editable path="WaveBlocks/WaveBlock8"]
+[editable path="WaveBlocks/WaveBlock9"]
+[editable path="WaveBlocks/WaveBlock10"]
+[editable path="WaveBlocks/WaveBlock11"]
+[editable path="WaveBlocks/WaveBlock12"]
+[editable path="WaveBlocks/WaveBlock13"]
+[editable path="WaveBlocks/WaveBlock14"]

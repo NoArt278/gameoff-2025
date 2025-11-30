@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://brjnfy2555cvi"]
+[gd_scene load_steps=23 format=3 uid="uid://brjnfy2555cvi"]
 
 [ext_resource type="Script" uid="uid://dkeh8gh4u0l15" path="res://scripts/UI/level_select.gd" id="1_chg43"]
 [ext_resource type="PackedScene" uid="uid://cmku86o88i4pr" path="res://scenes/level_components/player.tscn" id="2_r77uv"]
 [ext_resource type="Material" uid="uid://shxmlnfeq0t2" path="res://assets/Material/text_material.tres" id="2_ty08u"]
 [ext_resource type="PackedScene" uid="uid://b0k2bchpemght" path="res://scenes/UI/settings.tscn" id="4_7plkq"]
 [ext_resource type="PackedScene" uid="uid://c7rbxvsvbojsg" path="res://scenes/level_components/wave_block.tscn" id="5_ckc44"]
+[ext_resource type="PackedScene" uid="uid://brra8lkanx6ig" path="res://scenes/UI/mobile_control.tscn" id="6_mi1ok"]
 [ext_resource type="Shader" uid="uid://cmjryxw4eow51" path="res://assets/Shaders/particle_noise.gdshader" id="6_r77uv"]
 [ext_resource type="Theme" uid="uid://02jl3acnqg0j" path="res://assets/UISettings/main_menu.tres" id="8_mi1ok"]
 
@@ -114,6 +115,8 @@ process_mode = 3
 position = Vector2(300, 337)
 
 [node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_7plkq")]
+
+[node name="MobileControl" parent="UnaffectedByVisibility" instance=ExtResource("6_mi1ok")]
 
 [node name="Walls" type="Node" parent="UnaffectedByVisibility"]
 process_mode = 3
