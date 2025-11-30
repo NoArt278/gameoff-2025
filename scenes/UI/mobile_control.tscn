@@ -13,9 +13,9 @@ size = Vector2(200, 200)
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
 material = ExtResource("1_whcsf")
-position = Vector2(149.4, 618)
+position = Vector2(166.20001, 618)
 rotation = 3.1415927
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("1_hh8bl")
 texture_pressed = ExtResource("2_6ilua")
 shape = SubResource("RectangleShape2D_hh8bl")
@@ -25,8 +25,8 @@ visibility_mode = 1
 
 [node name="RightButton" type="TouchScreenButton" parent="."]
 material = ExtResource("1_whcsf")
-position = Vector2(169.4, 531)
-scale = Vector2(0.45, 0.45)
+position = Vector2(185.80002, 501)
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("1_hh8bl")
 texture_pressed = ExtResource("2_6ilua")
 shape = SubResource("RectangleShape2D_hh8bl")
@@ -37,8 +37,8 @@ visibility_mode = 1
 [node name="LowButton" type="TouchScreenButton" parent="."]
 modulate = Color(0, 1, 0, 1)
 material = ExtResource("1_whcsf")
-position = Vector2(426, 531)
-scale = Vector2(0.45, 0.45)
+position = Vector2(426, 506)
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_chk8p")
 texture_pressed = ExtResource("4_vrjv5")
 shape = SubResource("RectangleShape2D_hh8bl")
@@ -49,8 +49,8 @@ visibility_mode = 1
 [node name="MediumButton" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 0, 1)
 material = ExtResource("1_whcsf")
-position = Vector2(551, 531)
-scale = Vector2(0.45, 0.45)
+position = Vector2(551, 506)
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_chk8p")
 texture_pressed = ExtResource("4_vrjv5")
 shape = SubResource("RectangleShape2D_hh8bl")
@@ -61,8 +61,8 @@ visibility_mode = 1
 [node name="HighButton" type="TouchScreenButton" parent="."]
 modulate = Color(1, 0, 0, 1)
 material = ExtResource("1_whcsf")
-position = Vector2(674, 531)
-scale = Vector2(0.45, 0.45)
+position = Vector2(674, 506)
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_chk8p")
 texture_pressed = ExtResource("4_vrjv5")
 shape = SubResource("RectangleShape2D_hh8bl")
@@ -72,9 +72,9 @@ visibility_mode = 1
 
 [node name="JumpButton" type="TouchScreenButton" parent="."]
 material = ExtResource("1_whcsf")
-position = Vector2(967, 616)
+position = Vector2(967, 618)
 rotation = -1.5707964
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("1_hh8bl")
 texture_pressed = ExtResource("2_6ilua")
 shape = SubResource("RectangleShape2D_hh8bl")
