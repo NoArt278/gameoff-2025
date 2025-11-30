@@ -218,6 +218,8 @@ process_mode = 3
 process_mode = 3
 position = Vector2(300, 210)
 
+[node name="MobileControl" parent="UnaffectedByVisibility" instance=ExtResource("7_um6dh")]
+
 [node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_wu84c")]
 
 [node name="Tutorial" type="Control" parent="UnaffectedByVisibility" node_paths=PackedStringArray("prev_screen")]
@@ -402,8 +404,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_oa1go")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_oa1go")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oa1go")
 text = "Close Tutorial"
-
-[node name="MobileControl" parent="UnaffectedByVisibility" instance=ExtResource("7_um6dh")]
 
 [node name="Walls" type="Node" parent="UnaffectedByVisibility"]
 process_mode = 3

@@ -114,9 +114,9 @@ process_mode = 3
 process_mode = 3
 position = Vector2(300, 337)
 
-[node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_7plkq")]
-
 [node name="MobileControl" parent="UnaffectedByVisibility" instance=ExtResource("6_mi1ok")]
+
+[node name="Settings" parent="UnaffectedByVisibility" instance=ExtResource("4_7plkq")]
 
 [node name="Walls" type="Node" parent="UnaffectedByVisibility"]
 process_mode = 3
